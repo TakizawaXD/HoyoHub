@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <!-- Gradiente de Oro Sagrado Celestia -->
+    <linearGradient id="emblemGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8dc" />
+      <stop offset="30%" stop-color="#f5cf6d" />
+      <stop offset="70%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#916416" />
+    </linearGradient>
+
+    <!-- Gradiente de Facetas de Luz -->
+    <linearGradient id="facetLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ecd19d" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="facetShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9e721d" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4a330a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Resplandor Cósmico del Viajero -->
+    <radialGradient id="coreRadiance" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="25%" stop-color="#fcedb4" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#6978ff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filtro de Resplandor Suave -->
+    <filter id="emblemGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Fondo Cósmico Translúcido -->
+  <circle cx="60" cy="60" r="56" fill="#0b0e1a" fill-opacity="0.85" />
+  <circle cx="60" cy="60" r="56" stroke="url(#emblemGoldGrad)" stroke-width="1.8" />
+  
+  <!-- Anillo Interior de Astrolabio & Ticks Cardinales -->
+  <circle cx="60" cy="60" r="48" stroke="url(#emblemGoldGrad)" stroke-width="0.8" stroke-dasharray="1.5 3.5" stroke-opacity="0.6" />
+  <circle cx="60" cy="60" r="44" stroke="#ecd19d" stroke-width="0.5" stroke-opacity="0.3" />
+
+  <!-- Puntos Cardinales de la Brújula del Viajero (N, S, E, O) -->
+  <polygon points="60,6 62.5,13 60,11 57.5,13" fill="url(#emblemGoldGrad)" />
+  <polygon points="60,114 62.5,107 60,109 57.5,107" fill="url(#emblemGoldGrad)" />
+  <polygon points="6,60 13,62.5 11,60 13,57.5" fill="url(#emblemGoldGrad)" />
+  <polygon points="114,60 107,62.5 109,60 107,57.5" fill="url(#emblemGoldGrad)" />
+
+  <!-- Nodos Diagonales (NE, NO, SE, SO) -->
+  <circle cx="26" cy="26" r="1.5" fill="#f5cf6d" opacity="0.8" />
+  <circle cx="94" cy="26" r="1.5" fill="#f5cf6d" opacity="0.8" />
+  <circle cx="26" cy="94" r="1.5" fill="#f5cf6d" opacity="0.8" />
+  <circle cx="94" cy="94" r="1.5" fill="#f5cf6d" opacity="0.8" />
+
+  <!-- Órbita Cósmica Inclinada (Expreso Astral / Vacío ZZZ) -->
+  <ellipse cx="60" cy="60" rx="43" ry="17" transform="rotate(-28 60 60)" stroke="url(#emblemGoldGrad)" stroke-width="1" stroke-opacity="0.75" />
+  <!-- Micro estrella orbitante -->
+  <circle cx="96" cy="41" r="2.2" fill="#ffffff" filter="url(#emblemGlow)" />
+
+  <!-- Resplandor Central -->
+  <circle cx="60" cy="60" r="28" fill="url(#coreRadiance)" />
+
+  <!-- Estrella Secundaria de 8 Puntas (Diagonales sutiles) -->
+  <polygon points="60,28 65,55 92,60 65,65 60,92 55,65 28,60 55,55" fill="url(#emblemGoldGrad)" opacity="0.35" transform="rotate(45 60 60)" />
+
+  <!-- Estrella Primordial del Viajero (Estrella de 4 Puntas Estilo Protogema / Stella) -->
+  <!-- Curva cóncava emblemática -->
+  <path d="M 60,14 Q 60,60 106,60 Q 60,60 60,106 Q 60,60 14,60 Q 60,60 60,14 Z" fill="url(#emblemGoldGrad)" filter="url(#emblemGlow)" />
+
+  <!-- Facetas de Cristal Primordial con relieve de luz y sombra -->
+  <!-- Faceta Norte-Este (Luz) -->
+  <path d="M 60,14 Q 60,60 106,60 L 60,60 Z" fill="url(#facetLight)" opacity="0.7" />
+  <!-- Faceta Sur-Oeste (Sombra) -->
+  <path d="M 60,106 Q 60,60 14,60 L 60,60 Z" fill="url(#facetShadow)" opacity="0.6" />
+  <!-- Faceta Norte-Oeste (Semi-luz) -->
+  <path d="M 60,14 Q 60,60 14,60 L 60,60 Z" fill="#fff8dc" opacity="0.4" />
+  <!-- Faceta Sur-Este (Semi-sombra) -->
+  <path d="M 60,106 Q 60,60 106,60 L 60,60 Z" fill="#916416" opacity="0.5" />
+
+  <!-- Núcleo de Diamante Central -->
+  <polygon points="60,46 69,60 60,74 51,60" fill="#ffffff" opacity="0.9" />
+  <polygon points="60,51 66,60 60,69 54,60" fill="url(#emblemGoldGrad)" />
+
+  <!-- Chispa Central de Luz Pura -->
+  <circle cx="60" cy="60" r="2.5" fill="#ffffff" />
+  <line x1="60" y1="54" x2="60" y2="66" stroke="#ffffff" stroke-width="1" />
+  <line x1="54" y1="60" x2="66" y2="60" stroke="#ffffff" stroke-width="1" />
+</svg>

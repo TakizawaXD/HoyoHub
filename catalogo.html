@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Catálogo Maestro de Personajes & 3 Builds Meta · El Gremio del Viajero | Genshin, Star Rail & ZZZ</title>
+  
+  <meta name="description" content="Catálogo maestro oficial de personajes de El Gremio del Viajero. Descubre las 3 builds más óptimas por personaje, mejores armas, artefactos, equipos recomendados y dónde farmear cada material de ascensión." />
+  <meta name="keywords" content="Catálogo Genshin Impact, builds Genshin, builds Honkai Star Rail, builds Zenless Zone Zero, materiales ascensión, armas 5 estrellas, artefactos meta" />
+  <meta name="author" content="El Gremio del Viajero" />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+  <link rel="apple-touch-icon" href="assets/clan_emblem.jpg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Open Graph / Social Embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="El Gremio del Viajero" />
+  <meta property="og:title" content="Catálogo Maestro de Personajes & Builds Meta · El Gremio del Viajero" />
+  <meta property="og:description" content="Guías completas de Genshin Impact, Star Rail y ZZZ: 3 builds óptimas por personaje, mejores armas, artefactos y rutas de farmeo." />
+  <meta property="og:image" content="assets/og_banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="./catalogo.html" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Catálogo Maestro de Personajes & Builds Meta · El Gremio del Viajero" />
+  <meta name="twitter:description" content="Guías completas de Genshin Impact, Star Rail y ZZZ: 3 builds óptimas por personaje y rutas de farmeo." />
+  <meta name="twitter:image" content="assets/og_banner.jpg" />
+
+  <!-- Estilos del Sistema -->
+  <link rel="stylesheet" href="css/base.css?v=11" />
+  <link rel="stylesheet" href="css/layout.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
+  <link rel="stylesheet" href="css/catalog.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=11" />
+</head>
+<body>
+  <!-- Fondo Canvas de Polvo Estelar y Nebulosa -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Principal Compacto y Ordenado -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="header-brand" id="brand-link" title="Volver al Inicio del Gremio">
+          <img src="assets/clan_emblem.svg" alt="Emblema El Gremio del Viajero" class="brand-emblem" loading="eager" decoding="async" />
+          <div class="brand-text">
+            <h1>
+              <span class="clan-name-text">El Gremio del Viajero</span>
+            </h1>
+            <span class="brand-tag clan-tag-text">GV</span>
+          </div>
+        </a>
+
+        <!-- Navegación Segmentada Central -->
+        <nav class="desktop-nav" aria-label="Navegación Principal">
+          <div class="nav-games-segmented">
+            <a href="index.html" class="nav-segment" title="Hub Central">
+              <span data-icon="hub"></span>
+              <span>Hub Central</span>
+            </a>
+            <a href="genshin.html" class="nav-segment" title="Portal Genshin Impact">
+              <span data-icon="genshin"></span>
+              <span>Genshin</span>
+            </a>
+            <a href="hsr.html" class="nav-segment" title="Portal Honkai Star Rail">
+              <span data-icon="hsr"></span>
+              <span>Star Rail</span>
+            </a>
+            <a href="zzz.html" class="nav-segment" title="Portal Zenless Zone Zero">
+              <span data-icon="zzz"></span>
+              <span>ZZZ</span>
+            </a>
+            <a href="catalogo.html" class="nav-segment active" title="Catálogo de Personajes & Builds">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+          </div>
+
+          <div class="nav-quick-links">
+            <a href="index.html#cinema-section" class="quick-link" title="HoYo Cinema: Tráilers & Cinemáticas">
+              <span data-icon="cinema"></span>
+              <span>Cine</span>
+            </a>
+            <a href="index.html#news-section" class="quick-link" title="Noticias en Vivo">
+              <span data-icon="news"></span>
+              <span>Noticias</span>
+            </a>
+            <a href="index.html#hoyo-hub-section" class="quick-link" title="Códigos y Banners">
+              <span data-icon="codes"></span>
+              <span>Códigos</span>
+            </a>
+            <a href="index.html#roster-section" class="quick-link" title="Miembros del Gremio">
+              <span data-icon="roster"></span>
+              <span>Roster</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Acciones Rápidas -->
+        <div class="header-actions">
+          <button class="nav-btn-sound music-modal-trigger" title="Menú de Música HoYoverse (Jukebox)" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); background: rgba(212, 175, 55, 0.15); color: #ffd700; cursor: pointer; border: none; font-size: 0.82rem; font-weight: 700;">
+            <span data-icon="music"></span>
+            <span>Música</span>
+          </button>
+          <button id="sound-toggle-btn" class="nav-btn-sound" title="Efectos de audio celestiales">
+            <span class="sound-icon" data-icon="soundOff"></span>
+          </button>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="nav-btn-discord discord-link-target" title="Servidor oficial de Discord">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal Dedicado al Catálogo -->
+    <main class="main-content" style="padding-top: 1.5rem;">
+      <!-- Hero Exclusivo del Catálogo -->
+      <section class="catalog-page-hero" aria-label="Introducción al Catálogo Maestro" style="margin-bottom: 2rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; padding: 1.5rem 1rem;">
+        <span class="clst-catalog-badge" style="margin: 0 auto 0.75rem auto;">
+          <span data-icon="sparkles" data-icon-class="clst-icon-sm"></span>
+          <span>Base de Datos Oficial · Versión 2026</span>
+        </span>
+        <h1 style="font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: -0.02em;">
+          <span class="title-gold">CATÁLOGO DE PERSONAJES & BUILDS META</span>
+        </h1>
+        <p style="font-size: clamp(0.88rem, 2vw, 1.05rem); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.75rem;">
+          Explora todos los personajes 5★ y 4★ de <strong>Genshin Impact</strong>, <strong>Honkai: Star Rail</strong> y <strong>Zenless Zone Zero</strong>. Haz clic en cualquier personaje para ver sus <strong>3 builds más óptimas</strong>, talentos, conos de luz, motores W, artefactos y <strong>dónde farmear cada material de ascensión</strong>.
+        </p>
+
+        <!-- Selector Rápido de Juego en la Cabecera -->
+        <div class="catalog-game-switchers-bar" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <button class="clst-pill catalog-game-tab active" data-game="all">
+            <span data-icon="hub" data-icon-class="clst-icon-sm"></span>
+            <span>Todos (Separados por Juego)</span>
+          </button>
+          <button class="clst-pill catalog-game-tab" data-game="genshin">
+            <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+            <span>Genshin Impact</span>
+          </button>
+          <button class="clst-pill catalog-game-tab" data-game="hsr">
+            <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+            <span>Honkai: Star Rail</span>
+          </button>
+          <button class="clst-pill catalog-game-tab" data-game="zzz">
+            <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+            <span>Zenless Zone Zero</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Raíz Dinámica del Catálogo Completo -->
+      <section id="dedicated-catalog-root" class="catalog-section" aria-label="Catálogo Maestro de Personajes"></section>
+    </main>
+
+    <!-- Footer Oficial del Gremio -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 44px; height: 44px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="clan-name-text title-gold" style="font-size: 1.15rem;">El Gremio del Viajero</h3>
+        <p style="max-width: 600px; font-size: 0.82rem; color: var(--text-secondary);">
+          Comunidad autónoma de jugadores de habla hispana de Genshin Impact, Honkai: Star Rail y Zenless Zone Zero.
+          Todos los derechos, logotipos, arte y marcas registradas pertenecen a © COGNOSPHERE / HoYoverse.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: center;">
+          <a href="index.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hub"></span>
+            <span>Hub Central</span>
+          </a>
+          <a href="genshin.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="genshin"></span>
+            <span>Portal Genshin</span>
+          </a>
+          <a href="hsr.html" style="color: #6978ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hsr"></span>
+            <span>Portal Star Rail</span>
+          </a>
+          <a href="zzz.html" style="color: #e853cd; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="zzz"></span>
+            <span>Portal ZZZ</span>
+          </a>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" style="color: #7983f5; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dock Inferior Móvil (Navegación Nativa Smartphone) -->
+    <nav class="mobile-bottom-dock" aria-label="Navegación Móvil">
+      <div class="dock-container">
+        <a href="index.html" class="dock-item">
+          <span class="icon" data-icon="hub"></span>
+          <span>Hub</span>
+        </a>
+        <a href="genshin.html" class="dock-item">
+          <span class="icon" data-icon="genshin"></span>
+          <span>Genshin</span>
+        </a>
+        <a href="hsr.html" class="dock-item">
+          <span class="icon" data-icon="hsr"></span>
+          <span>HSR</span>
+        </a>
+        <a href="zzz.html" class="dock-item">
+          <span class="icon" data-icon="zzz"></span>
+          <span>ZZZ</span>
+        </a>
+        <a href="catalogo.html" class="dock-item active">
+          <span class="icon" data-icon="swords"></span>
+          <span>Catálogo</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Modal / Bottom Sheet de Visualización de Build -->
+    <div id="build-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-character-name">
+      <div class="modal-window">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div id="modal-body-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script type="module" src="js/icons.js?v=11"></script>
+  <script type="module" src="js/catalog-controller.js?v=11"></script>
+</body>
+</html>

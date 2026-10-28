@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Zenless Zone Zero · Portal Oficial de El Gremio del Viajero | Noticias, Agentes y Códigos</title>
+  
+  <meta name="description" content="Portal dedicado de Zenless Zone Zero de El Gremio del Viajero. Noticias en vivo vía API oficial HoYoPlay, canales exclusivos con cuenta regresiva, códigos de Películas Policromas y 3 builds meta por personaje." />
+  <meta name="keywords" content="Zenless Zone Zero portal, Nueva Eridu, Proxies, builds ZZZ, amplificadores de motor, Peliculas Policromas codigos, Shiyu Defense, El Gremio del Viajero" />
+  <meta name="author" content="El Gremio del Viajero" />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+  <link rel="apple-touch-icon" href="assets/clan_emblem.jpg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Open Graph / Social Embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="El Gremio del Viajero" />
+  <meta property="og:title" content="Portal Zenless Zone Zero · El Gremio del Viajero" />
+  <meta property="og:description" content="Noticias en vivo, sintonizaciones de canal con temporizador, códigos de Películas Policromas y builds meta de ZZZ." />
+  <meta property="og:image" content="assets/og_banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="./zzz.html" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal Zenless Zone Zero · El Gremio del Viajero" />
+  <meta name="twitter:description" content="Noticias en vivo, agentes y builds meta de Zenless Zone Zero." />
+  <meta name="twitter:image" content="assets/og_banner.jpg" />
+
+  <!-- Estilos del Sistema (Optimizado) -->
+  <link rel="stylesheet" href="css/base.css?v=11" />
+  <link rel="stylesheet" href="css/layout.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
+  <link rel="stylesheet" href="css/carousel.css?v=11" />
+  <link rel="stylesheet" href="css/news.css?v=11" />
+  <link rel="stylesheet" href="css/videos.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=11" />
+</head>
+<body>
+  <!-- Fondo Canvas de Polvo Estelar -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Principal Compacto y Ordenado -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="header-brand" title="Volver al Hub Central">
+          <img src="assets/clan_emblem.svg" alt="Emblema El Gremio del Viajero" class="brand-emblem" loading="eager" decoding="async" />
+          <div class="brand-text">
+            <h1>
+              <span>El Gremio del Viajero</span>
+            </h1>
+            <span class="brand-tag" style="color: #e853cd; border-color: rgba(232, 83, 205, 0.35);">ZZZ</span>
+          </div>
+        </a>
+
+        <!-- Navegación Segmentada Central -->
+        <nav class="desktop-nav" aria-label="Navegación ZZZ">
+          <div class="nav-games-segmented">
+            <a href="index.html" class="nav-segment" title="Hub Central">
+              <span data-icon="hub"></span>
+              <span>Hub Central</span>
+            </a>
+            <a href="genshin.html" class="nav-segment" title="Portal Genshin Impact">
+              <span data-icon="genshin"></span>
+              <span>Genshin</span>
+            </a>
+            <a href="hsr.html" class="nav-segment" title="Portal Honkai Star Rail">
+              <span data-icon="hsr"></span>
+              <span>Star Rail</span>
+            </a>
+            <a href="zzz.html" class="nav-segment active-zzz" title="Portal Zenless Zone Zero">
+              <span data-icon="zzz"></span>
+              <span>ZZZ</span>
+            </a>
+            <a href="catalogo.html?game=zzz" class="nav-segment" title="Catálogo de Personajes & Builds">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+          </div>
+
+          <div class="nav-quick-links">
+            <a href="catalogo.html?game=zzz" class="quick-link" title="Catálogo de Agentes & Guía de Farmeo">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+            <a href="#zzz-cinema" class="quick-link" title="Cine de Nueva Eridu: Demos y MVs">
+              <span data-icon="cinema"></span>
+              <span>Cine</span>
+            </a>
+            <a href="#zzz-news" class="quick-link" title="Noticias de Nueva Eridu">
+              <span data-icon="news"></span>
+              <span>Noticias</span>
+            </a>
+            <a href="#zzz-channels" class="quick-link" title="Canales Exclusivos">
+              <span data-icon="disc"></span>
+              <span>Canales</span>
+            </a>
+            <a href="#zzz-codes" class="quick-link" title="Policromos">
+              <span data-icon="codes"></span>
+              <span>Códigos</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Acciones Rápidas -->
+        <div class="header-actions">
+          <a href="catalogo.html?game=zzz" class="nav-btn-builds" title="Ver agentes de ZZZ y sus 3 builds meta">
+            <span data-icon="sword"></span>
+            <span>Builds Meta</span>
+          </a>
+          <button class="nav-btn-sound music-modal-trigger" title="Menú de Música HoYoverse (Jukebox)" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); background: rgba(232, 83, 205, 0.18); color: #f472b6; cursor: pointer; border: none; font-size: 0.82rem; font-weight: 700;">
+            <span data-icon="music"></span>
+            <span>Música</span>
+          </button>
+          <button id="sound-toggle-btn" class="nav-btn-sound" title="Efectos de audio celestiales">
+            <span class="sound-icon" data-icon="soundOff"></span>
+          </button>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="nav-btn-discord" title="Servidor oficial de Discord">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Barra de Navegación de Subpágina -->
+      <nav class="subpage-nav-bar" aria-label="Conexión entre Juegos">
+        <a href="index.html" class="subpage-back-link">
+          <span data-icon="arrowLeft"></span>
+          <span>Volver al Hub Conector Principal</span>
+        </a>
+        <div class="subpage-switcher-links">
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-right: 0.35rem;">Cambiar de juego:</span>
+          <a href="genshin.html" class="switcher-pill">
+            <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+            <span>Genshin</span>
+          </a>
+          <a href="hsr.html" class="switcher-pill">
+            <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+            <span>Star Rail</span>
+          </a>
+          <a href="zzz.html" class="switcher-pill active" style="background: linear-gradient(135deg, #e853cd, #ffc83d); color: #0b0e1a;">
+            <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+            <span>ZZZ</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Temático de Zenless Zone Zero -->
+      <section class="game-portal-hero" aria-label="Hero de Zenless Zone Zero">
+        <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/16/bca19f05a213ae991b0e45a8e83b391a_748932879298524692.webp" alt="Distrito de Nueva Eridu" class="game-portal-hero-bg" loading="eager" decoding="async" />
+        <div class="game-portal-hero-overlay"></div>
+        <div class="game-portal-hero-content">
+          <img src="assets/zzz_logo.svg" alt="Logo Zenless Zone Zero" class="game-hero-icon" loading="eager" decoding="async" />
+          <h1 class="hero-title">
+            <span style="background: linear-gradient(135deg, #ffffff 0%, #e853cd 50%, #ffc83d 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+              ZENLESS ZONE ZERO
+            </span>
+          </h1>
+          <p class="hero-motto">
+            Portal oficial de Proxies: expediciones a las Cavidades, Shiyu Defense Rango S, 3 builds meta por agente y Policromos.
+          </p>
+
+          <div class="hero-stats-bar">
+            <div class="stat-item">
+              <span class="label">Versión Activa:</span>
+              <span class="value" style="color: #e853cd;">Versión 1.3 / 3.3</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">API HoYoPlay:</span>
+              <span class="value" style="color: var(--color-anemo);" id="zzz-api-status">● Conectado (ID: U5hbdsT9W7)</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Canal Exclusivo:</span>
+              <span class="value" style="color: #ffc83d;">Yanagi & Lighter</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="catalogo.html?game=zzz" class="btn btn-primary" title="Ver catálogo y builds óptimas de ZZZ">
+              <span data-icon="swords"></span>
+              <span>Catálogo & Builds Óptimas</span>
+            </a>
+            <button class="btn btn-secondary" data-open-builds data-game="zzz">
+              <span data-icon="sword"></span>
+              <span>3 Builds Meta por Personaje</span>
+            </button>
+            <a href="#zzz-news" class="btn btn-secondary">
+              <span data-icon="news"></span>
+              <span>Noticias de Nueva Eridu</span>
+            </a>
+            <a href="#zzz-channels" class="btn btn-secondary">
+              <span data-icon="disc"></span>
+              <span>Canales Exclusivos</span>
+            </a>
+            <a href="#zzz-codes" class="btn btn-secondary">
+              <span data-icon="codes"></span>
+              <span>Canjear Policromos</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CINE DE NUEVA ERIDU (TRÁILERS, DEMOS Y MVs)
+           ============================================================ -->
+      <section id="zzz-cinema" class="cinema-section" aria-label="Cine de Zenless Zone Zero">
+        <div id="zzz-videos-root"></div>
+      </section>
+
+      <!-- ============================================================
+           NOTICIAS EN TIEMPO REAL DE ZZZ (API)
+           ============================================================ -->
+      <section id="zzz-news" class="news-hub-container" aria-label="Noticias Oficiales de ZZZ">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span style="color: #e853cd;">AVISOS OFICIALES DE NUEVA ERIDU</span>
+            </h2>
+            <p class="section-desc">
+              Canales exclusivos, lanzamientos musicales y eventos de Realidad Virtual sincronizados desde la API HoYoPlay.
+            </p>
+          </div>
+          <button id="refresh-zzz-news" class="btn btn-secondary btn-sm">
+            <span data-icon="refresh"></span>
+            <span>Refrescar API</span>
+          </button>
+        </div>
+
+        <!-- Banners Promocionales de ZZZ -->
+        <div id="zzz-banners-container" class="promo-banners-grid"></div>
+
+        <!-- Filtros de categoría -->
+        <div class="news-filter-bar">
+          <button class="news-filter-btn active" data-filter="all">
+            <span data-icon="globe"></span>
+            <span>Todos los Avisos</span>
+          </button>
+          <button class="news-filter-btn" data-filter="announce">
+            <span data-icon="disc"></span>
+            <span>Canales y Trama</span>
+          </button>
+          <button class="news-filter-btn" data-filter="event">
+            <span data-icon="codes"></span>
+            <span>Eventos VR</span>
+          </button>
+          <button class="news-filter-btn" data-filter="info">
+            <span data-icon="film"></span>
+            <span>Música y Demostraciones</span>
+          </button>
+        </div>
+
+        <!-- Cuadrícula de Noticias -->
+        <div id="zzz-news-grid" class="news-grid">
+          <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: #e853cd;">
+            <div style="animation: spin 1s linear infinite; display: inline-block;">
+              <span data-icon="refresh" data-icon-class="clst-icon-xl clst-icon-zzz"></span>
+            </div>
+            <p style="margin-top: 0.8rem; font-weight: 600;">Sintonizando señales de Nueva Eridu...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CANALES EXCLUSIVOS & CUENTA REGRESIVA
+           ============================================================ -->
+      <section id="zzz-channels" style="margin-top: 3.5rem;" aria-label="Canales Exclusivos">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CANALES EXCLUSIVOS DE AGENTES</span>
+            </h2>
+            <p class="section-desc">
+              Cuenta regresiva para la sintonización de Agentes Rango S y Motores W.
+            </p>
+          </div>
+        </div>
+
+        <div id="zzz-channels-container" class="banners-grid"></div>
+      </section>
+
+      <!-- ============================================================
+           BÓVEDA DE CÓDIGOS DE POLICROMOS
+           ============================================================ -->
+      <section id="zzz-codes" style="margin-top: 3.5rem;" aria-label="Códigos de Policromos">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CÓDIGOS DE CANJE DE ZZZ</span>
+            </h2>
+            <p class="section-desc">
+              Canjea Películas Policromas, Dennies y Registros Oficiales con un solo clic.
+            </p>
+          </div>
+          <a href="https://zenless.hoyoverse.com/redemption" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #e853cd, #ffc83d); color: #070913;">
+            <span>Canje Oficial ZZZ</span>
+            <span data-icon="external"></span>
+          </a>
+        </div>
+
+        <div id="zzz-codes-grid" class="codes-grid"></div>
+      </section>
+
+      <!-- ============================================================
+           CALENDARIO TÁCTICO DE CHIPS Y DISCOS
+           ============================================================ -->
+      <section id="zzz-farming" style="margin-top: 3.5rem;" aria-label="Farmeo de Chips de ZZZ">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CALENDARIO TÁCTICO DE CHIPS Y DISCOS</span>
+            </h2>
+            <p class="section-desc">
+              Materiales para la optimización de habilidades y maestría de Agentes.
+            </p>
+          </div>
+        </div>
+
+        <div class="genshin-card" style="padding: 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(232, 83, 205, 0.35); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: var(--color-physical); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Chips Físicos & Ataque</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Salas de Realidad Virtual (VR)</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Agentes: Billy, Nekomata, Corin, Piper.</p>
+            </div>
+
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(232, 83, 205, 0.35); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: var(--color-pyro); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Chips de Fuego y Éter</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Entrenamiento Táctico de Éter</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Agentes: Soldier 11, Koleda, Lucy, Nicole, Zhu Yuan.</p>
+            </div>
+
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(232, 83, 205, 0.35); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: var(--color-cryo); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Chips de Hielo y Eléctrico</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Salas de Choque Criogénico</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Agentes: Ellen Joe, Lycaon, Soukaku, Anby, Grace, Yanagi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           NOVEDADES Y ACTUALIZACIONES DE NUEVA ERIDU (PARTE INFERIOR)
+           ============================================================ -->
+      <section class="updates-carousel-section" aria-label="Novedades y Actualizaciones de Zenless Zone Zero" style="margin-top: 3.5rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span style="color: #e853cd;">ACTUALIZACIONES DESTACADAS & NOVEDADES</span>
+            </h2>
+            <p class="section-desc">
+              Sintoniza las novedades de versión de Nueva Eridu, canales de agente y recompensas de Shiyu Defense.
+            </p>
+          </div>
+          <span style="font-size: 0.8rem; color: #e853cd; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="sparkles" data-icon-class="clst-icon-sm"></span>
+            <span>Versión 1.3 / 1.4 Activa</span>
+          </span>
+        </div>
+
+        <div id="zzz-carousel-root" class="updates-carousel-container">
+          <!-- Slide Inicial Precargado para Cero Pantallas Oscuras -->
+          <article class="carousel-slide active" data-index="0" aria-label="Venganza Virtual & El Filo de Escarcha de la Sección 6">
+            <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/23/3877f3b906d87286d5c488a7c21ca52e_5915130864426814005.jpg" alt="ZZZ 1.3" class="carousel-slide-bg" loading="eager" decoding="async" />
+            <div class="carousel-slide-overlay"></div>
+            <div class="carousel-content-box">
+              <div class="carousel-meta-row">
+                <span class="carousel-game-badge zzz">
+                  <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+                  <span>Zenless Zone Zero</span>
+                </span>
+                <span class="carousel-version-pill">Versión 1.3 / 1.4</span>
+                <span class="carousel-status-pill">
+                  <span class="carousel-live-dot"></span>
+                  <span>Canal Rango S Activo</span>
+                </span>
+              </div>
+              <h2 class="carousel-title">Venganza Virtual & El Filo de Escarcha de la Sección 6</h2>
+              <p class="carousel-subtitle">Penetra en los Huecos de alta contaminación con la comandante Hoshimi Miyabi y Yanagi, ejecutando devastadoras anomalías de Escarcha y Choque polarizado con tiempos récord.</p>
+              <div class="carousel-features-grid">
+                <div class="carousel-feature-tag"><span data-icon="gem" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>+2800 Películas Policromas</span></div>
+                <div class="carousel-feature-tag"><span data-icon="star" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Hoshimi Miyabi & Yanagi</span></div>
+                <div class="carousel-feature-tag"><span data-icon="disc" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Discos de Tracción Rango S</span></div>
+              </div>
+              <div class="carousel-actions">
+                <button class="btn btn-primary" data-open-builds data-game="zzz"><span data-icon="sword"></span><span>Ver 3 Builds de ZZZ</span></button>
+                <a href="#zzz-channels" class="btn btn-secondary"><span data-icon="film"></span><span>Canales de Agente</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PROXIES DESTACADOS DEL CLAN
+           ============================================================ -->
+      <section id="zzz-members" style="margin-top: 3.5rem;" aria-label="Proxies de ZZZ en el Clan">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">PROXIES DESTACADOS · EL GREMIO DEL VIAJERO</span>
+            </h2>
+            <p class="section-desc">
+              Miembros con rango S en Shiyu Defense Nivel 17 y builds optimizadas.
+            </p>
+          </div>
+        </div>
+
+        <div id="zzz-members-grid" class="members-grid"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 40px; height: 40px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="title-gold" style="font-size: 1.1rem;">El Gremio del Viajero · División Zenless Zone Zero</h3>
+        <p style="max-width: 600px; font-size: 0.8rem; color: var(--text-secondary);">
+          Zenless Zone Zero es una marca registrada de COGNOSPHERE / HoYoverse. Portal no oficial gestionado por la comunidad.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hub"></span>
+            <span>Hub Central</span>
+          </a>
+          <a href="genshin.html" style="color: #22b8ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="genshin"></span>
+            <span>Portal Genshin</span>
+          </a>
+          <a href="hsr.html" style="color: #6978ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hsr"></span>
+            <span>Portal Star Rail</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dock Inferior Móvil -->
+    <nav class="mobile-bottom-dock" aria-label="Navegación Móvil">
+      <div class="dock-container">
+        <a href="index.html" class="dock-item">
+          <span class="icon" data-icon="hub"></span>
+          <span>Hub</span>
+        </a>
+        <a href="genshin.html" class="dock-item">
+          <span class="icon" data-icon="genshin"></span>
+          <span>Genshin</span>
+        </a>
+        <a href="hsr.html" class="dock-item">
+          <span class="icon" data-icon="hsr"></span>
+          <span>HSR</span>
+        </a>
+        <a href="zzz.html" class="dock-item active">
+          <span class="icon" data-icon="zzz"></span>
+          <span>ZZZ</span>
+        </a>
+        <a href="catalogo.html?game=zzz" class="dock-item">
+          <span class="icon" data-icon="swords"></span>
+          <span>Catálogo</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Modal de Build -->
+    <div id="build-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-window">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div id="modal-body-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/icons.js?v=10"></script>
+  <script type="module" src="js/zzz-controller.js?v=10"></script>
+</body>
+</html>

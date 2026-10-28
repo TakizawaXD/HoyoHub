@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Genshin Impact · Portal Oficial de El Gremio del Viajero | Noticias, Banners y Farmeo</title>
+  
+  <meta name="description" content="Portal dedicado de Genshin Impact de El Gremio del Viajero. Noticias en vivo vía API oficial de HoYoverse, deseos y banners con cuenta regresiva, calendario diario de talentos y 3 builds meta por personaje." />
+  <meta name="keywords" content="Genshin Impact portal, Teyvat, builds Genshin, banners Genshin, farmeo talentos, armas 5 estrellas, Abismo spiral, El Gremio del Viajero" />
+  <meta name="author" content="El Gremio del Viajero" />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+  <link rel="apple-touch-icon" href="assets/clan_emblem.jpg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Open Graph / Social Embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="El Gremio del Viajero" />
+  <meta property="og:title" content="Portal Genshin Impact · El Gremio del Viajero" />
+  <meta property="og:description" content="Noticias en vivo, banners con temporizador, calendario de talentos y builds meta de Genshin Impact." />
+  <meta property="og:image" content="assets/og_banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="./genshin.html" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal Genshin Impact · El Gremio del Viajero" />
+  <meta name="twitter:description" content="Noticias en vivo, banners y builds meta de Genshin Impact." />
+  <meta name="twitter:image" content="assets/og_banner.jpg" />
+
+  <!-- Estilos del Sistema (Optimizado) -->
+  <link rel="stylesheet" href="css/base.css?v=11" />
+  <link rel="stylesheet" href="css/layout.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
+  <link rel="stylesheet" href="css/carousel.css?v=11" />
+  <link rel="stylesheet" href="css/news.css?v=11" />
+  <link rel="stylesheet" href="css/videos.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=11" />
+</head>
+<body>
+  <!-- Fondo Canvas de Polvo Estelar -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Principal Compacto y Ordenado -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="header-brand" title="Volver al Hub Central">
+          <img src="assets/clan_emblem.svg" alt="Emblema El Gremio del Viajero" class="brand-emblem" loading="eager" decoding="async" />
+          <div class="brand-text">
+            <h1>
+              <span>El Gremio del Viajero</span>
+            </h1>
+            <span class="brand-tag">GENSHIN</span>
+          </div>
+        </a>
+
+        <!-- Navegación Segmentada Central -->
+        <nav class="desktop-nav" aria-label="Navegación Genshin">
+          <div class="nav-games-segmented">
+            <a href="index.html" class="nav-segment" title="Hub Central">
+              <span data-icon="hub"></span>
+              <span>Hub Central</span>
+            </a>
+            <a href="genshin.html" class="nav-segment active-genshin" title="Portal Genshin Impact">
+              <span data-icon="genshin"></span>
+              <span>Genshin</span>
+            </a>
+            <a href="hsr.html" class="nav-segment" title="Portal Honkai Star Rail">
+              <span data-icon="hsr"></span>
+              <span>Star Rail</span>
+            </a>
+            <a href="zzz.html" class="nav-segment" title="Portal Zenless Zone Zero">
+              <span data-icon="zzz"></span>
+              <span>ZZZ</span>
+            </a>
+            <a href="catalogo.html?game=genshin" class="nav-segment" title="Catálogo de Personajes & Builds">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+          </div>
+
+          <div class="nav-quick-links">
+            <a href="catalogo.html?game=genshin" class="quick-link" title="Catálogo de Personajes & Guía de Farmeo">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+            <a href="#genshin-cinema" class="quick-link" title="Cine de Genshin: Demos y Tráilers">
+              <span data-icon="cinema"></span>
+              <span>Cine</span>
+            </a>
+            <a href="#genshin-news" class="quick-link" title="Noticias de Genshin">
+              <span data-icon="news"></span>
+              <span>Noticias</span>
+            </a>
+            <a href="#genshin-farming" class="quick-link" title="Talentos y Armas de Hoy">
+              <span data-icon="book"></span>
+              <span>Talentos</span>
+            </a>
+            <a href="#genshin-codes" class="quick-link" title="Protogemas">
+              <span data-icon="codes"></span>
+              <span>Códigos</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Acciones Rápidas -->
+        <div class="header-actions">
+          <a href="catalogo.html?game=genshin" class="nav-btn-builds" title="Ver personajes de Genshin y sus 3 builds meta">
+            <span data-icon="sword"></span>
+            <span>Builds Meta</span>
+          </a>
+          <button class="nav-btn-sound music-modal-trigger" title="Menú de Música HoYoverse (Jukebox)" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); background: rgba(212, 175, 55, 0.15); color: #ffd700; cursor: pointer; border: none; font-size: 0.82rem; font-weight: 700;">
+            <span data-icon="music"></span>
+            <span>Música</span>
+          </button>
+          <button id="sound-toggle-btn" class="nav-btn-sound" title="Efectos de audio celestiales">
+            <span class="sound-icon" data-icon="soundOff"></span>
+          </button>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="nav-btn-discord" title="Servidor oficial de Discord">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Barra de Navegación de Subpágina (Conector a otros juegos) -->
+      <nav class="subpage-nav-bar" aria-label="Conexión entre Juegos">
+        <a href="index.html" class="subpage-back-link">
+          <span data-icon="arrowLeft"></span>
+          <span>Volver al Hub Conector Principal</span>
+        </a>
+        <div class="subpage-switcher-links">
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-right: 0.35rem;">Cambiar de juego:</span>
+          <a href="genshin.html" class="switcher-pill active">
+            <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+            <span>Genshin</span>
+          </a>
+          <a href="hsr.html" class="switcher-pill">
+            <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+            <span>Star Rail</span>
+          </a>
+          <a href="zzz.html" class="switcher-pill">
+            <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+            <span>ZZZ</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Temático de Genshin Impact -->
+      <section class="game-portal-hero" aria-label="Hero de Genshin Impact">
+        <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/12/544bf0d17e4570f886fd1b731a3274da_5003849349598617917.webp" alt="Paisaje de Genshin Impact" class="game-portal-hero-bg" loading="eager" decoding="async" />
+        <div class="game-portal-hero-overlay"></div>
+        <div class="game-portal-hero-content">
+          <img src="assets/genshin_logo.svg" alt="Logo Genshin Impact" class="game-hero-icon" loading="eager" decoding="async" />
+          <h1 class="hero-title">
+            <span class="title-gold">GENSHIN IMPACT</span>
+          </h1>
+          <p class="hero-motto">
+            Portal oficial de exploración de Teyvat, optimización de 3 builds meta por personaje y sincronización en tiempo real.
+          </p>
+
+          <div class="hero-stats-bar">
+            <div class="stat-item">
+              <span class="label">Versión Activa:</span>
+              <span class="value">5.x Natlan</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">API HoYoPlay:</span>
+              <span class="value" style="color: var(--color-anemo);" id="genshin-api-status">● Conectado (ID: gopR6Cufr3)</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Reinicio Servidor:</span>
+              <span class="value" id="server-reset-timer">04:00 AM</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="catalogo.html?game=genshin" class="btn btn-primary" title="Ver catálogo y builds óptimas de Genshin">
+              <span data-icon="swords"></span>
+              <span>Catálogo & Builds Óptimas</span>
+            </a>
+            <button class="btn btn-secondary" data-open-builds data-game="genshin">
+              <span data-icon="sword"></span>
+              <span>3 Builds Meta por Personaje</span>
+            </button>
+            <a href="#genshin-news" class="btn btn-secondary">
+              <span data-icon="news"></span>
+              <span>Noticias de la Versión</span>
+            </a>
+            <a href="#genshin-farming" class="btn btn-secondary">
+              <span data-icon="book"></span>
+              <span>Calendario de Talentos</span>
+            </a>
+            <a href="#genshin-codes" class="btn btn-secondary">
+              <span data-icon="codes"></span>
+              <span>Códigos de Protogemas</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CINE DE GENSHIN IMPACT (TRÁILERS, DEMOS Y CORTOS ANIMADOS)
+           ============================================================ -->
+      <section id="genshin-cinema" class="cinema-section" aria-label="Cine de Genshin Impact">
+        <div id="genshin-videos-root"></div>
+      </section>
+
+      <!-- ============================================================
+           SECCIÓN DE NOTICIAS EN VIVO DE GENSHIN IMPACT (API)
+           ============================================================ -->
+      <section id="genshin-news" class="news-hub-container" aria-label="Noticias Oficiales de Genshin">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">NOTICIAS OFICIALES DE TEYVAT</span>
+            </h2>
+            <p class="section-desc">
+              Feed en tiempo real obtenido directamente de la API oficial de HoYoPlay para Genshin Impact.
+            </p>
+          </div>
+          <button id="refresh-genshin-news" class="btn btn-secondary btn-sm">
+            <span data-icon="refresh"></span>
+            <span>Refrescar API</span>
+          </button>
+        </div>
+
+        <!-- Banners Promocionales de Genshin -->
+        <div id="genshin-banners-container" class="promo-banners-grid">
+          <!-- Banners inyectados por JS -->
+        </div>
+
+        <!-- Filtros de categoría -->
+        <div class="news-filter-bar">
+          <button class="news-filter-btn active" data-filter="all">
+            <span data-icon="globe"></span>
+            <span>Todos los Avisos</span>
+          </button>
+          <button class="news-filter-btn" data-filter="event">
+            <span data-icon="codes"></span>
+            <span>Eventos Web</span>
+          </button>
+          <button class="news-filter-btn" data-filter="announce">
+            <span data-icon="announce"></span>
+            <span>Actualizaciones y Versión</span>
+          </button>
+          <button class="news-filter-btn" data-filter="info">
+            <span data-icon="info"></span>
+            <span>Información y Abismo</span>
+          </button>
+        </div>
+
+        <!-- Cuadrícula de Noticias -->
+        <div id="genshin-news-grid" class="news-grid">
+          <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: var(--gold-primary);">
+            <div style="animation: spin 1s linear infinite; display: inline-block;">
+              <span data-icon="refresh" data-icon-class="clst-icon-xl clst-icon-gold"></span>
+            </div>
+            <p style="margin-top: 0.8rem; font-weight: 600;">Consultando la API oficial de Genshin Impact...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           DESEOS ACTIVOS & CUENTA REGRESIVA
+           ============================================================ -->
+      <section id="genshin-banners" style="margin-top: 3.5rem;" aria-label="Banners de Personajes de Genshin">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">DESEOS DE PERSONAJE ACTIVOS</span>
+            </h2>
+            <p class="section-desc">
+              Tiempo restante para el cierre de los banners promocionales actuales de 5 Estrellas.
+            </p>
+          </div>
+        </div>
+
+        <div id="hoyo-banners-container" class="banners-grid">
+          <!-- Renderizado dinámico desde hoyo-hub.js -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CALENDARIO DIARIO DE FARMEO DE TEYVAT
+           ============================================================ -->
+      <section id="genshin-farming" style="margin-top: 3.5rem;" aria-label="Calendario de Farmeo de Talentos">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">DOMINIOS Y LIBROS DE TALENTOS</span>
+            </h2>
+            <p class="section-desc">
+              Horario semanal de Mondstadt, Liyue, Inazuma, Sumeru, Fontaine y Natlan.
+            </p>
+          </div>
+        </div>
+
+        <div id="day-buttons-bar" class="day-selector-bar">
+          <!-- Inyectado por farming.js -->
+        </div>
+
+        <div id="farming-schedule-container" class="genshin-card" style="padding: 1.5rem;">
+          <!-- Inyectado por farming.js -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           BÓVEDA DE CÓDIGOS DE GENSHIN IMPACT
+           ============================================================ -->
+      <section id="genshin-codes" style="margin-top: 3.5rem;" aria-label="Códigos de Protogemas">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CÓDIGOS DE CANJE DE GENSHIN</span>
+            </h2>
+            <p class="section-desc">
+              Copia el código con un clic y accede directamente a la página oficial de canje de HoYoverse.
+            </p>
+          </div>
+          <a href="https://genshin.hoyoverse.com/es/gift" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            <span>Ir al Canje Oficial</span>
+            <span data-icon="external"></span>
+          </a>
+        </div>
+
+        <div id="genshin-codes-grid" class="codes-grid">
+          <!-- Renderizado por JS -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           BUSCADOR DE UID EN VIVO (ENKA.NETWORK)
+           ============================================================ -->
+      <section id="genshin-uid-section" style="margin-top: 3.5rem;" aria-label="Inspección de UID">
+        <div class="uid-search-box">
+          <div class="uid-search-header">
+            <div>
+              <h3 style="font-size: 1.2rem; color: var(--gold-light); display: flex; align-items: center; gap: 0.4rem;">
+                <span data-icon="search" data-icon-class="clst-icon-gold"></span>
+                <span>Buscador de UID de Teyvat en Vivo</span>
+              </h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary);">Consulta artefactos, constelaciones, arma equipada y estadísticas reales desde Enka.Network.</p>
+            </div>
+            <span class="element-badge hydro">Enka Live API</span>
+          </div>
+
+          <form id="uid-search-form" class="uid-search-form">
+            <div class="uid-input-wrapper">
+              <span class="uid-input-icon">
+                <span data-icon="cardId"></span>
+              </span>
+              <input type="text" id="uid-search-input" class="uid-input" placeholder="Introduce UID (ej: 601248921)" maxlength="10" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span data-icon="refresh"></span>
+              <span>Sincronizar UID</span>
+            </button>
+          </form>
+
+          <div id="uid-live-result" style="margin-top: 1.25rem; display: none;"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           NOVEDADES Y ACTUALIZACIONES DE TEYVAT (PARTE INFERIOR)
+           ============================================================ -->
+      <section class="updates-carousel-section" aria-label="Novedades y Actualizaciones de Genshin Impact" style="margin-top: 3.5rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">ACTUALIZACIONES DESTACADAS & NOVEDADES</span>
+            </h2>
+            <p class="section-desc">
+              Sintoniza las novedades de versión de Natlan y banners destacados de Teyvat.
+            </p>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--gold-primary); font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="sparkles" data-icon-class="clst-icon-sm clst-icon-gold"></span>
+            <span>Versión 5.x Activa</span>
+          </span>
+        </div>
+
+        <div id="genshin-carousel-root" class="updates-carousel-container">
+          <!-- Slide Inicial Precargado para Cero Pantallas Oscuras -->
+          <article class="carousel-slide active" data-index="0" aria-label="El Reino del Fuego y los Dragones Saurios">
+            <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/23/9864ca4e249b1a698051e8370e711e57_2843160042726570954.jpg" alt="Natlan 5.x" class="carousel-slide-bg" loading="eager" decoding="async" />
+            <div class="carousel-slide-overlay"></div>
+            <div class="carousel-content-box">
+              <div class="carousel-meta-row">
+                <span class="carousel-game-badge genshin">
+                  <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+                  <span>Genshin Impact</span>
+                </span>
+                <span class="carousel-version-pill">Versión 5.2 / 5.3</span>
+                <span class="carousel-status-pill">
+                  <span class="carousel-live-dot"></span>
+                  <span>Expansión en Vivo · Natlan</span>
+                </span>
+              </div>
+              <h2 class="carousel-title">El Reino del Fuego y los Dragones Saurios</h2>
+              <p class="carousel-subtitle">Explora la nueva región volcánica de Natlan, domina las bendiciones del Espíritu Nocturno y desentraña los misterios de Ochkanatlan.</p>
+              <div class="carousel-features-grid">
+                <div class="carousel-feature-tag"><span data-icon="gem" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>+2400 Protogemas en logros y cofres</span></div>
+                <div class="carousel-feature-tag"><span data-icon="swords" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Nuevos Dominios de Artefactos</span></div>
+                <div class="carousel-feature-tag"><span data-icon="star" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Mavuika & Xilonen</span></div>
+              </div>
+              <div class="carousel-actions">
+                <button class="btn btn-primary" data-open-builds data-game="genshin"><span data-icon="sword"></span><span>Ver 3 Builds de Genshin</span></button>
+                <a href="#genshin-farming" class="btn btn-secondary"><span data-icon="book"></span><span>Calendario de Farmeo</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           ESPECIALISTAS DEL CLAN EN GENSHIN
+           ============================================================ -->
+      <section id="genshin-members" style="margin-top: 3.5rem;" aria-label="Especialistas de Genshin en el Clan">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">VETERANOS DEL ABISMO · EL GREMIO DEL VIAJERO</span>
+            </h2>
+            <p class="section-desc">
+              Miembros con 36 estrellas en el Abismo y builds emblemáticas para co-op y farmeo.
+            </p>
+          </div>
+        </div>
+
+        <div id="genshin-members-grid" class="members-grid">
+          <!-- Renderizado por JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 40px; height: 40px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="title-gold" style="font-size: 1.1rem;">El Gremio del Viajero · División Genshin Impact</h3>
+        <p style="max-width: 600px; font-size: 0.8rem; color: var(--text-secondary);">
+          Genshin Impact es una marca registrada de COGNOSPHERE / HoYoverse. Portal comunitario de jugadores hispanohablantes.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hub"></span>
+            <span>Hub Central</span>
+          </a>
+          <a href="hsr.html" style="color: #6978ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hsr"></span>
+            <span>Portal Star Rail</span>
+          </a>
+          <a href="zzz.html" style="color: #e853cd; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="zzz"></span>
+            <span>Portal ZZZ</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dock Inferior Móvil -->
+    <nav class="mobile-bottom-dock" aria-label="Navegación Móvil">
+      <div class="dock-container">
+        <a href="index.html" class="dock-item">
+          <span class="icon" data-icon="hub"></span>
+          <span>Hub</span>
+        </a>
+        <a href="genshin.html" class="dock-item active">
+          <span class="icon" data-icon="genshin"></span>
+          <span>Genshin</span>
+        </a>
+        <a href="hsr.html" class="dock-item">
+          <span class="icon" data-icon="hsr"></span>
+          <span>HSR</span>
+        </a>
+        <a href="zzz.html" class="dock-item">
+          <span class="icon" data-icon="zzz"></span>
+          <span>ZZZ</span>
+        </a>
+        <a href="catalogo.html?game=genshin" class="dock-item">
+          <span class="icon" data-icon="swords"></span>
+          <span>Catálogo</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Modal de Build -->
+    <div id="build-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-window">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div id="modal-body-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/icons.js?v=10"></script>
+  <script type="module" src="js/genshin-controller.js?v=10"></script>
+</body>
+</html>

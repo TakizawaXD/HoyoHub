@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>El Gremio del Viajero · Hub HoYoverse Conector | Genshin, Star Rail & ZZZ</title>
+  
+  <meta name="description" content="Portal oficial de El Gremio del Viajero. Builds meta actualizadas para Genshin Impact, Honkai: Star Rail y Zenless Zone Zero, sincronización de artefactos por UID, códigos de regalo diarios, noticias en vivo y Jukebox musical oficial." />
+  <meta name="keywords" content="El Gremio del Viajero, Genshin Impact builds, Honkai Star Rail builds, Zenless Zone Zero builds, UID Genshin, Enka Network, codigos Genshin, HoYoverse clan, HoYo Jukebox, Teyvat, Expreso Astral, Nueva Eridu" />
+  <meta name="author" content="El Gremio del Viajero" />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+  <link rel="apple-touch-icon" href="assets/clan_emblem.jpg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Open Graph / Facebook / Discord / WhatsApp Embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="El Gremio del Viajero" />
+  <meta property="og:title" content="El Gremio del Viajero · Portal Oficial HoYoverse & Builds Meta" />
+  <meta property="og:description" content="Comunidad de habla hispana y centro de comando HoYoverse. Consulta 3 builds meta por personaje, farmeo diario, códigos activos y escucha el Jukebox con 22 temas oficiales." />
+  <meta property="og:image" content="assets/og_banner.jpg" />
+  <meta property="og:image:secure_url" content="assets/og_banner.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="El Gremio del Viajero - Portal Oficial HoYoverse" />
+  <meta property="og:url" content="./index.html" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="El Gremio del Viajero · Portal Oficial HoYoverse & Builds Meta" />
+  <meta name="twitter:description" content="Builds meta para Genshin Impact, Star Rail y ZZZ, sincronización UID, noticias en vivo y reproductor musical." />
+  <meta name="twitter:image" content="assets/og_banner.jpg" />
+  <meta name="twitter:image:alt" content="El Gremio del Viajero - Banner de Presentación" />
+
+  <!-- Schema.org JSON-LD para Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Gremio del Viajero",
+    "alternateName": "GV HoYoverse Hub",
+    "url": "https://elgremiodelviajero.com",
+    "description": "Comunidad oficial y portal conector para Genshin Impact, Honkai: Star Rail y Zenless Zone Zero.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "catalogo.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Estilos del Sistema (Optimizado) -->
+  <link rel="stylesheet" href="css/base.css?v=11" />
+  <link rel="stylesheet" href="css/layout.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
+  <link rel="stylesheet" href="css/carousel.css?v=11" />
+  <link rel="stylesheet" href="css/news.css?v=11" />
+  <link rel="stylesheet" href="css/videos.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=11" />
+</head>
+<body>
+  <!-- Fondo Canvas de Polvo Estelar y Nebulosa -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Principal Compacto y Ordenado -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="header-brand" id="brand-link" title="Volver al Inicio del Gremio">
+          <img src="assets/clan_emblem.svg" alt="Emblema El Gremio del Viajero" class="brand-emblem" loading="eager" decoding="async" />
+          <div class="brand-text">
+            <h1>
+              <span class="clan-name-text">El Gremio del Viajero</span>
+            </h1>
+            <span class="brand-tag clan-tag-text">GV</span>
+          </div>
+        </a>
+
+        <!-- Navegación Segmentada Central -->
+        <nav class="desktop-nav" aria-label="Navegación Principal">
+          <div class="nav-games-segmented">
+            <a href="index.html" class="nav-segment active" title="Hub Central">
+              <span data-icon="hub"></span>
+              <span>Hub Central</span>
+            </a>
+            <a href="genshin.html" class="nav-segment" title="Portal Genshin Impact">
+              <span data-icon="genshin"></span>
+              <span>Genshin</span>
+            </a>
+            <a href="hsr.html" class="nav-segment" title="Portal Honkai Star Rail">
+              <span data-icon="hsr"></span>
+              <span>Star Rail</span>
+            </a>
+            <a href="zzz.html" class="nav-segment" title="Portal Zenless Zone Zero">
+              <span data-icon="zzz"></span>
+              <span>ZZZ</span>
+            </a>
+            <a href="catalogo.html" class="nav-segment" title="Catálogo de Personajes & 3 Builds">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+          </div>
+
+          <div class="nav-quick-links">
+            <a href="catalogo.html" class="quick-link" title="Catálogo de Personajes & Farmeo">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+            <a href="#cinema-section" class="quick-link" title="HoYo Cinema: Tráilers & Cinemáticas">
+              <span data-icon="cinema"></span>
+              <span>Cine</span>
+            </a>
+            <a href="#news-section" class="quick-link" title="Noticias en Vivo">
+              <span data-icon="news"></span>
+              <span>Noticias</span>
+            </a>
+            <a href="#hoyo-hub-section" class="quick-link" title="Códigos y Banners">
+              <span data-icon="codes"></span>
+              <span>Códigos</span>
+            </a>
+            <a href="#roster-section" class="quick-link" title="Miembros del Clan">
+              <span data-icon="roster"></span>
+              <span>Roster</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Acciones Rápidas -->
+        <div class="header-actions">
+          <a href="catalogo.html" class="nav-btn-builds" title="Ver catálogo de personajes y sus 3 builds meta">
+            <span data-icon="sword"></span>
+            <span>Builds Meta</span>
+          </a>
+          <button class="nav-btn-sound music-modal-trigger" title="Menú de Música HoYoverse (Jukebox)" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); background: rgba(212, 175, 55, 0.15); color: #ffd700; cursor: pointer; border: none; font-size: 0.82rem; font-weight: 700;">
+            <span data-icon="music"></span>
+            <span>Música</span>
+          </button>
+          <button id="sound-toggle-btn" class="nav-btn-sound" title="Efectos de audio celestiales">
+            <span class="sound-icon" data-icon="soundOff"></span>
+          </button>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="nav-btn-discord discord-link-target" title="Servidor oficial de Discord">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+          <button class="nav-btn-join btn-join-clan" title="Unirse al Clan">
+            <span data-icon="sparkles"></span>
+            <span>Unirse</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+      <!-- Hero Banner del Clan -->
+      <section class="clan-hero" aria-label="Bienvenida a El Gremio del Viajero">
+        <img src="assets/clan_banner.jpg" alt="Fondo El Gremio del Viajero" class="hero-background-img" loading="eager" decoding="async" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <img src="assets/clan_emblem.jpg" alt="Cresta del Gremio" class="hero-crest-badge" loading="eager" decoding="async" />
+          <h1 class="hero-title">
+            <span class="title-gold">EL GREMIO DEL VIAJERO</span>
+          </h1>
+          <p class="hero-motto clan-motto-text">
+            «Hacia las estrellas y los abismos más profundos de Teyvat y el Cosmos»
+          </p>
+
+          <div class="hero-stats-bar">
+            <div class="stat-item">
+              <span class="label">Nivel Clan:</span>
+              <span class="value clan-level-text">Nivel 10 · Abismo 12-3</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Miembros:</span>
+              <span class="value clan-members-count">48 / 50</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Servidores:</span>
+              <span class="value clan-server-text">América (Principal) / Europa</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Reclutamiento:</span>
+              <span class="value" style="color: var(--color-anemo);">● Abierto</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="catalogo.html" class="btn btn-primary" title="Ver catálogo de personajes, builds y farmeo">
+              <span data-icon="swords"></span>
+              <span>Catálogo & Builds Óptimas</span>
+            </a>
+            <button class="btn btn-secondary" data-open-builds data-game="all">
+              <span data-icon="sword"></span>
+              <span>3 Builds Meta por Personaje</span>
+            </button>
+            <a href="#updates-carousel-section" class="btn btn-secondary">
+              <span data-icon="sparkles"></span>
+              <span>Ver Novedades & Banners</span>
+            </a>
+            <a href="#portals-section" class="btn btn-secondary">
+              <span data-icon="temple"></span>
+              <span>Explorar Portales</span>
+            </a>
+            <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="btn btn-discord discord-link-target">
+              <span data-icon="discord"></span>
+              <span>Comunidad Discord</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Barra de Estado en Tiempo Real -->
+      <section class="live-tracker-bar" aria-label="Indicadores en Tiempo Real">
+        <div class="tracker-card">
+          <div class="tracker-icon-box">
+            <span data-icon="clock" data-icon-class="clst-icon-md clst-icon-gold"></span>
+          </div>
+          <div class="tracker-info">
+            <span class="tracker-label">Reinicio Diario de Servidor (04:00 AM)</span>
+            <span class="tracker-value" id="server-reset-timer">Calculando...</span>
+          </div>
+        </div>
+
+        <div class="tracker-card">
+          <div class="tracker-icon-box">
+            <span data-icon="gem" data-icon-class="clst-icon-md clst-icon-gem"></span>
+          </div>
+          <div class="tracker-info">
+            <span class="tracker-label">Códigos Activos Disponibles</span>
+            <span class="tracker-value" style="color: var(--primo-cyan);">11 Códigos Verificados</span>
+          </div>
+        </div>
+
+        <div class="tracker-card">
+          <div class="tracker-icon-box">
+            <span data-icon="satellite" data-icon-class="clst-icon-md clst-icon-anemo"></span>
+          </div>
+          <div class="tracker-info">
+            <span class="tracker-label">API HoYoPlay & HoYoLAB</span>
+            <span class="tracker-value" style="color: var(--color-anemo);" id="api-status-badge">● Sincronizado</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECCIÓN DE PORTALES DE JUEGOS (EL CONECTOR CENTRAL)
+           ============================================================ -->
+      <section id="portals-section" class="portals-section" aria-label="Portales de Juegos Conectados">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">PORTALES DEDICADOS HOYOVERSE</span>
+            </h2>
+            <p class="section-desc">
+              Accede a la página dedicada de cada juego con sus noticias exclusivas, calendarios, códigos y herramientas.
+            </p>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--gold-primary); font-weight: 700;">
+            3 Juegos Integrados
+          </span>
+        </div>
+
+        <div class="portals-grid">
+          <!-- Tarjeta Conectora 1: Genshin Impact -->
+          <article class="portal-game-card portal-genshin">
+            <div class="portal-card-hero">
+              <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/12/544bf0d17e4570f886fd1b731a3274da_5003849349598617917.webp" alt="Genshin Impact" class="portal-hero-img" loading="lazy" decoding="async" />
+              <div class="portal-hero-overlay"></div>
+              <div class="portal-header-content">
+                <img src="assets/genshin_logo.svg" alt="Logo Genshin" class="portal-logo-thumb" loading="lazy" decoding="async" />
+                <div class="portal-title-block">
+                  <span class="portal-version-pill">Versión 5.x Natlan</span>
+                  <h3 style="color: var(--gold-light);">Genshin Impact</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-card-body">
+              <p class="portal-desc">
+                Explora el mundo de Teyvat, optimiza las composiciones para el Abismo 12-3, consulta el calendario diario de talentos y canjea protogemas.
+              </p>
+
+              <div class="portal-features-list">
+                <div class="portal-feature-item">
+                  <span data-icon="news" data-icon-class="clst-icon-sm clst-icon-gold"></span>
+                  <span>Noticias y banners oficiales de la <strong>API HoYoPlay</strong></span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="book" data-icon-class="clst-icon-sm clst-icon-gold"></span>
+                  <span>Calendario diario de <strong>Libros de Talentos y Armas</strong></span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="search" data-icon-class="clst-icon-sm clst-icon-gold"></span>
+                  <span>Búsqueda de builds reales en vivo por <strong>UID (Enka.Network)</strong></span>
+                </div>
+              </div>
+
+              <a href="genshin.html" class="btn btn-primary portal-cta-btn">
+                <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+                <span>Entrar al Portal de Genshin</span>
+                <span data-icon="arrowRight" data-icon-class="clst-icon-sm"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta Conectora 2: Honkai: Star Rail -->
+          <article class="portal-game-card portal-hsr">
+            <div class="portal-card-hero">
+              <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/21/94b346207176750fb5ff12cd0bd8d108_4537896671082030891.webp" alt="Honkai Star Rail" class="portal-hero-img" loading="lazy" decoding="async" />
+              <div class="portal-hero-overlay"></div>
+              <div class="portal-header-content">
+                <img src="assets/hsr_logo.svg" alt="Logo HSR" class="portal-logo-thumb" loading="lazy" decoding="async" />
+                <div class="portal-title-block">
+                  <span class="portal-version-pill" style="color: #6978ff;">Versión 2.6 / 4.6</span>
+                  <h3 style="color: #ffffff;">Honkai: Star Rail</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-card-body">
+              <p class="portal-desc">
+                Sube a bordo del Expreso Astral, domina la Memoria del Caos y Pura Ficción, y mantente al día con los Saltos de evento y jades estelares.
+              </p>
+
+              <div class="portal-features-list">
+                <div class="portal-feature-item">
+                  <span data-icon="hsr" data-icon-class="clst-icon-sm clst-icon-hsr"></span>
+                  <span>Saltos de evento activos y <strong>cuentas regresivas</strong></span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="gem" data-icon-class="clst-icon-sm clst-icon-hsr"></span>
+                  <span>Códigos de <strong>Jade Estelar</strong> con canje en 1 clic</span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="sparkles" data-icon-class="clst-icon-sm clst-icon-hsr"></span>
+                  <span>Guías tácticas de <strong>Rastros, Conos de Luz y Reliquias</strong></span>
+                </div>
+              </div>
+
+              <a href="hsr.html" class="btn btn-secondary portal-cta-btn" style="color: #ffffff;">
+                <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+                <span>Entrar al Expreso Astral</span>
+                <span data-icon="arrowRight" data-icon-class="clst-icon-sm"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta Conectora 3: Zenless Zone Zero -->
+          <article class="portal-game-card portal-zzz">
+            <div class="portal-card-hero">
+              <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/16/bca19f05a213ae991b0e45a8e83b391a_748932879298524692.webp" alt="Zenless Zone Zero" class="portal-hero-img" loading="lazy" decoding="async" />
+              <div class="portal-hero-overlay"></div>
+              <div class="portal-header-content">
+                <img src="assets/zzz_logo.svg" alt="Logo ZZZ" class="portal-logo-thumb" loading="lazy" decoding="async" />
+                <div class="portal-title-block">
+                  <span class="portal-version-pill" style="color: #e853cd;">Versión 1.3 / 3.3</span>
+                  <h3 style="color: #ffffff;">Zenless Zone Zero</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-card-body">
+              <p class="portal-desc">
+                Ingresa al distrito urbano de Nueva Eridu, conquista las Cavidades y el Shiyu Defense, y recluta a los Agentes Rango S de Canal Exclusivo.
+              </p>
+
+              <div class="portal-features-list">
+                <div class="portal-feature-item">
+                  <span data-icon="zzz" data-icon-class="clst-icon-sm clst-icon-zzz"></span>
+                  <span>Canales Exclusivos de <strong>Agentes Rango S y W-Engines</strong></span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="disc" data-icon-class="clst-icon-sm clst-icon-zzz"></span>
+                  <span>Calendario de <strong>Chips Tácticos y Discos</strong></span>
+                </div>
+                <div class="portal-feature-item">
+                  <span data-icon="film" data-icon-class="clst-icon-sm clst-icon-zzz"></span>
+                  <span>Miniálbumes urbanos y cinemáticas oficiales de <strong>HoYo-MiX</strong></span>
+                </div>
+              </div>
+
+              <a href="zzz.html" class="btn btn-secondary portal-cta-btn" style="color: #ffffff;">
+                <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+                <span>Acceder a Nueva Eridu</span>
+                <span data-icon="arrowRight" data-icon-class="clst-icon-sm"></span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           HOYO CINEMA: CINE, TRÁILERS Y DEMOS OFICIALES (VIDEO API)
+           ============================================================ -->
+      <section id="cinema-section" class="cinema-section" aria-label="HoYo Cinema: Videos y Cinemáticas">
+        <div id="index-videos-root"></div>
+      </section>
+
+      <!-- ============================================================
+           SECCIÓN DE NOTICIAS HOYOVERSE EN DIRECTO (API FEED MULTIJUEGO)
+           ============================================================ -->
+      <section id="news-section" class="news-hub-container" aria-label="Noticias Oficiales HoYoverse">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">NOTICIAS OFICIALES HOYOVERSE</span>
+            </h2>
+            <p class="section-desc">
+              Sincronizado directamente con las APIs de HoYoPlay y HoYoLAB. Filtrar por juego o categoría:
+            </p>
+          </div>
+          <button id="refresh-news-btn" class="btn btn-secondary btn-sm" title="Recargar noticias desde la API">
+            <span data-icon="refresh"></span>
+            <span>Actualizar API</span>
+          </button>
+        </div>
+
+        <!-- Filtros de Noticias -->
+        <div class="news-filter-bar" role="tablist">
+          <button class="news-filter-btn active" data-filter="all">
+            <span data-icon="globe"></span>
+            <span>Todas las Noticias</span>
+          </button>
+          <button class="news-filter-btn" data-filter="genshin">
+            <span data-icon="genshin"></span>
+            <span>Genshin Impact</span>
+          </button>
+          <button class="news-filter-btn" data-filter="hsr">
+            <span data-icon="hsr"></span>
+            <span>Honkai: Star Rail</span>
+          </button>
+          <button class="news-filter-btn" data-filter="zzz">
+            <span data-icon="zzz"></span>
+            <span>Zenless Zone Zero</span>
+          </button>
+          <button class="news-filter-btn" data-filter="event">
+            <span data-icon="codes"></span>
+            <span>Eventos</span>
+          </button>
+          <button class="news-filter-btn" data-filter="announce">
+            <span data-icon="announce"></span>
+            <span>Anuncios</span>
+          </button>
+        </div>
+
+        <!-- Banners Promocionales Dinámicos de la API -->
+        <div id="promo-banners-container" class="promo-banners-grid" aria-label="Banners Promocionales">
+          <!-- Banners inyectados por JS -->
+        </div>
+
+        <!-- Grid de Tarjetas de Noticias -->
+        <div id="news-grid-container" class="news-grid" aria-live="polite">
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--gold-primary);">
+            <div style="animation: spin 1s linear infinite; display: inline-block;">
+              <span data-icon="refresh" data-icon-class="clst-icon-xl clst-icon-gold"></span>
+            </div>
+            <p style="margin-top: 0.8rem; font-weight: 600;">Conectando con la API de noticias de HoYoverse...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           HOYO MULTI-HUB: CÓDIGOS DE REGALO Y TEMPORIZADORES
+           ============================================================ -->
+      <section id="hoyo-hub-section" class="tab-content active" aria-label="Códigos de Regalo y Cuentas Regresivas">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">BÓVEDA DE CÓDIGOS & BANNERS</span>
+            </h2>
+            <p class="section-desc">
+              Códigos de regalo activos con copia en 1 clic y enlace directo al canje oficial de HoYoverse.
+            </p>
+          </div>
+        </div>
+
+        <!-- Selector de Juego para Códigos -->
+        <div class="game-tabs" role="tablist">
+          <button class="game-tab-btn active" data-game="genshin">
+            <span data-icon="genshin"></span>
+            <span>Genshin Impact</span>
+          </button>
+          <button class="game-tab-btn" data-game="zzz">
+            <span data-icon="zzz"></span>
+            <span>Zenless Zone Zero</span>
+          </button>
+          <button class="game-tab-btn" data-game="hsr">
+            <span data-icon="hsr"></span>
+            <span>Honkai: Star Rail</span>
+          </button>
+        </div>
+
+        <!-- Contenedor de Códigos de Canje -->
+        <div id="hoyo-codes-container" class="codes-grid">
+          <!-- Renderizado dinámico desde hoyo-hub.js -->
+        </div>
+
+        <!-- Cuentas Regresivas de Banners Actuales -->
+        <h3 style="font-size: 1.25rem; color: var(--gold-light); margin: 2rem 0 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span data-icon="clock" data-icon-class="clst-icon-gold"></span>
+          <span>Banners y Deseos Activos en Tiempo Real</span>
+        </h3>
+        <div id="hoyo-banners-container" class="banners-grid">
+          <!-- Renderizado dinámico desde hoyo-hub.js -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CALENDARIO DE FARMEO DE TEYVAT & ZZZ
+           ============================================================ -->
+      <section id="farming-section" style="margin-top: 3.5rem;" aria-label="Calendario de Farmeo Semanal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CALENDARIO DIARIO DE FARMEO</span>
+            </h2>
+            <p class="section-desc">
+              Descubre qué libros de talentos, materiales de armas y chips tácticos están disponibles hoy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Selector de Días de la Semana -->
+        <div id="day-buttons-bar" class="day-selector-bar">
+          <!-- Renderizado dinámico desde farming.js -->
+        </div>
+
+        <!-- Resultados del Día -->
+        <div id="farming-schedule-container" class="genshin-card" style="padding: 1.5rem;">
+          <!-- Inyectado por farming.js -->
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CARRUSEL DE ACTUALIZACIONES DESTACADAS & NOVEDADES (PARTE INFERIOR)
+           ============================================================ -->
+      <section id="updates-carousel-section" class="updates-carousel-section" aria-label="Actualizaciones y Novedades de Versión" style="margin-top: 3.5rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">ACTUALIZACIONES DESTACADAS & NOVEDADES</span>
+            </h2>
+            <p class="section-desc">
+              Sintoniza las versiones vigentes de Natlan, Expreso Astral y Nueva Eridu con sus eventos oficiales en tiempo real.
+            </p>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--gold-primary); font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="sparkles" data-icon-class="clst-icon-sm clst-icon-gold"></span>
+            <span>Temporada Activa 2026</span>
+          </span>
+        </div>
+
+        <!-- Contenedor del Carrusel Interactivo -->
+        <div id="updates-carousel-root" class="updates-carousel-container">
+          <!-- Slide Inicial Precargado para Cero Pantallas Oscuras -->
+          <article class="carousel-slide active" data-index="0" aria-label="El Reino del Fuego & Los Guerreros Saurios de Natlan">
+            <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/23/9864ca4e249b1a698051e8370e711e57_2843160042726570954.jpg" alt="Natlan 5.x" class="carousel-slide-bg" loading="eager" decoding="async" />
+            <div class="carousel-slide-overlay"></div>
+            <div class="carousel-content-box">
+              <div class="carousel-meta-row">
+                <span class="carousel-game-badge genshin">
+                  <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+                  <span>Genshin Impact</span>
+                </span>
+                <span class="carousel-version-pill">Versión 5.x Natlan</span>
+                <span class="carousel-status-pill">
+                  <span class="carousel-live-dot"></span>
+                  <span>Expansión en Vivo</span>
+                </span>
+              </div>
+              <h2 class="carousel-title">El Reino del Fuego & Los Guerreros Saurios de Natlan</h2>
+              <p class="carousel-subtitle">Domina las bendiciones del Espíritu Nocturno, desbloquea los 6 santuarios de la noche y prepárate para la llegada triunfal de Mavuika y Xilonen a Teyvat con mecánicas únicas de exploración.</p>
+              <div class="carousel-features-grid">
+                <div class="carousel-feature-tag"><span data-icon="gem" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>+2400 Protogemas en exploración</span></div>
+                <div class="carousel-feature-tag"><span data-icon="swords" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Espiral del Abismo 12-3</span></div>
+                <div class="carousel-feature-tag"><span data-icon="star" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Banners 5★: Mavuika & Xilonen</span></div>
+              </div>
+              <div class="carousel-actions">
+                <button class="btn btn-primary" data-open-builds data-game="genshin"><span data-icon="sword"></span><span>Ver 3 Builds de Genshin</span></button>
+                <a href="genshin.html" class="btn btn-secondary"><span data-icon="genshin"></span><span>Entrar al Portal</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SALÓN DE LA FAMA Y ROSTER DEL CLAN
+           ============================================================ -->
+      <section id="roster-section" style="margin-top: 3.5rem;" aria-label="Roster de Miembros del Clan">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">SALÓN DE LA FAMA DEL CLAN</span>
+            </h2>
+            <p class="section-desc">
+              Miembros oficiales, roles y personajes insignia con builds optimizadas para el Abismo.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <button class="member-filter-btn active" data-filter="all">Todos</button>
+            <button class="member-filter-btn" data-filter="genshin">Genshin</button>
+            <button class="member-filter-btn" data-filter="zzz">ZZZ</button>
+            <button class="member-filter-btn" data-filter="hsr">Star Rail</button>
+          </div>
+        </div>
+
+        <!-- Buscador de UID en Vivo (Enka.Network API) -->
+        <div class="uid-search-box">
+          <div class="uid-search-header">
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--gold-light); display: flex; align-items: center; gap: 0.4rem;">
+                <span data-icon="search" data-icon-class="clst-icon-gold"></span>
+                <span>Inspeccionar UID de Genshin en Vivo</span>
+              </h3>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Consulta perfiles públicos reales de jugadores de América, Europa o Asia mediante la API de Enka.</p>
+            </div>
+            <span class="element-badge anemo">Enka.Network Live</span>
+          </div>
+
+          <form id="uid-search-form" class="uid-search-form">
+            <div class="uid-input-wrapper">
+              <span class="uid-input-icon">
+                <span data-icon="cardId"></span>
+              </span>
+              <input type="text" id="uid-search-input" class="uid-input" placeholder="Introduce UID (ej: 601248921)" maxlength="10" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span data-icon="refresh"></span>
+              <span>Sincronizar UID</span>
+            </button>
+          </form>
+
+          <div id="uid-live-result" style="margin-top: 1.25rem; display: none;"></div>
+        </div>
+
+        <!-- Grid de Miembros -->
+        <div id="members-grid-container" class="members-grid">
+          <!-- Renderizado dinámico desde roster.js -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Oficial del Clan -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 44px; height: 44px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="clan-name-text title-gold" style="font-size: 1.15rem;">El Gremio del Viajero</h3>
+        <p style="max-width: 600px; font-size: 0.82rem; color: var(--text-secondary);">
+          Comunidad autónoma de jugadores de habla hispana de Genshin Impact, Honkai: Star Rail y Zenless Zone Zero.
+          Todos los derechos, logotipos, arte y marcas registradas pertenecen a © COGNOSPHERE / HoYoverse.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: center;">
+          <a href="genshin.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="genshin"></span>
+            <span>Portal Genshin</span>
+          </a>
+          <a href="hsr.html" style="color: #6978ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hsr"></span>
+            <span>Portal Star Rail</span>
+          </a>
+          <a href="zzz.html" style="color: #e853cd; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="zzz"></span>
+            <span>Portal ZZZ</span>
+          </a>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" style="color: #7983f5; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dock Inferior Móvil (Navegación Nativa Smartphone) -->
+    <nav class="mobile-bottom-dock" aria-label="Navegación Móvil">
+      <div class="dock-container">
+        <a href="index.html" class="dock-item active">
+          <span class="icon" data-icon="hub"></span>
+          <span>Hub</span>
+        </a>
+        <a href="genshin.html" class="dock-item">
+          <span class="icon" data-icon="genshin"></span>
+          <span>Genshin</span>
+        </a>
+        <a href="hsr.html" class="dock-item">
+          <span class="icon" data-icon="hsr"></span>
+          <span>HSR</span>
+        </a>
+        <a href="zzz.html" class="dock-item">
+          <span class="icon" data-icon="zzz"></span>
+          <span>ZZZ</span>
+        </a>
+        <a href="catalogo.html" class="dock-item">
+          <span class="icon" data-icon="swords"></span>
+          <span>Catálogo</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Modal / Bottom Sheet de Visualización de Build -->
+    <div id="build-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-character-name">
+      <div class="modal-window">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div id="modal-body-content"></div>
+      </div>
+    </div>
+
+    <!-- Modal para Unirse al Clan -->
+    <div id="join-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-window">
+        <button id="join-modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <h2 style="font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem; text-align: center;">
+          Solicitud de Ingreso · El Gremio del Viajero
+        </h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">
+          Completa tus datos de aventurero para unirte a nuestro Discord y formar parte de las escuadras del Abismo y Shiyu Defense.
+        </p>
+
+        <form id="join-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.78rem; color: var(--gold-primary); margin-bottom: 0.35rem; font-weight: 700;">Nombre o Nickname</label>
+            <input type="text" required class="uid-input" placeholder="Ej: ViajeroDelViento" style="padding-left: 1rem;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.78rem; color: var(--gold-primary); margin-bottom: 0.35rem; font-weight: 700;">Juego Principal</label>
+            <select class="uid-input" style="padding-left: 1rem;">
+              <option value="genshin">Genshin Impact</option>
+              <option value="hsr">Honkai: Star Rail</option>
+              <option value="zzz">Zenless Zone Zero</option>
+              <option value="all">Multijuego (Todos los anteriores)</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.78rem; color: var(--gold-primary); margin-bottom: 0.35rem; font-weight: 700;">UID en el Juego</label>
+            <input type="text" required class="uid-input" placeholder="Ej: 601248921" style="padding-left: 1rem;" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <span data-icon="sparkles"></span>
+            <span>Enviar Solicitud y Entrar a Discord</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script type="module" src="js/icons.js?v=10"></script>
+  <script type="module" src="js/index-controller.js?v=10"></script>
+</body>
+</html>

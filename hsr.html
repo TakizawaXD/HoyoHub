@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Honkai: Star Rail · Portal Oficial de El Gremio del Viajero | Noticias, Saltos y Códigos</title>
+  
+  <meta name="description" content="Portal dedicado de Honkai: Star Rail de El Gremio del Viajero. Noticias en vivo vía API oficial HoYoPlay, saltos de evento activos con cuenta regresiva, códigos de Jade Estelar y 3 builds meta por personaje." />
+  <meta name="keywords" content="Honkai Star Rail portal, Expreso Astral, builds Star Rail, saltos HSR, conos de luz, Jade Estelar codigos, Salon Olvidado, El Gremio del Viajero" />
+  <meta name="author" content="El Gremio del Viajero" />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+  <link rel="apple-touch-icon" href="assets/clan_emblem.jpg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Open Graph / Social Embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="El Gremio del Viajero" />
+  <meta property="og:title" content="Portal Honkai: Star Rail · El Gremio del Viajero" />
+  <meta property="og:description" content="Noticias en vivo, saltos de evento con temporizador, códigos de Jade Estelar y builds meta de Honkai: Star Rail." />
+  <meta property="og:image" content="assets/og_banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="./hsr.html" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal Honkai: Star Rail · El Gremio del Viajero" />
+  <meta name="twitter:description" content="Noticias en vivo, saltos y builds meta de Honkai: Star Rail." />
+  <meta name="twitter:image" content="assets/og_banner.jpg" />
+
+  <!-- Estilos del Sistema (Optimizado) -->
+  <link rel="stylesheet" href="css/base.css?v=11" />
+  <link rel="stylesheet" href="css/layout.css?v=11" />
+  <link rel="stylesheet" href="css/components.css?v=11" />
+  <link rel="stylesheet" href="css/carousel.css?v=11" />
+  <link rel="stylesheet" href="css/news.css?v=11" />
+  <link rel="stylesheet" href="css/videos.css?v=11" />
+  <link rel="stylesheet" href="css/mobile.css?v=11" />
+</head>
+<body>
+  <!-- Fondo Canvas de Polvo Estelar -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Principal Compacto y Ordenado -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="header-brand" title="Volver al Hub Central">
+          <img src="assets/clan_emblem.svg" alt="Emblema El Gremio del Viajero" class="brand-emblem" loading="eager" decoding="async" />
+          <div class="brand-text">
+            <h1>
+              <span>El Gremio del Viajero</span>
+            </h1>
+            <span class="brand-tag" style="color: #6978ff; border-color: rgba(105, 120, 255, 0.35);">STAR RAIL</span>
+          </div>
+        </a>
+
+        <!-- Navegación Segmentada Central -->
+        <nav class="desktop-nav" aria-label="Navegación Star Rail">
+          <div class="nav-games-segmented">
+            <a href="index.html" class="nav-segment" title="Hub Central">
+              <span data-icon="hub"></span>
+              <span>Hub Central</span>
+            </a>
+            <a href="genshin.html" class="nav-segment" title="Portal Genshin Impact">
+              <span data-icon="genshin"></span>
+              <span>Genshin</span>
+            </a>
+            <a href="hsr.html" class="nav-segment active-hsr" title="Portal Honkai Star Rail">
+              <span data-icon="hsr"></span>
+              <span>Star Rail</span>
+            </a>
+            <a href="zzz.html" class="nav-segment" title="Portal Zenless Zone Zero">
+              <span data-icon="zzz"></span>
+              <span>ZZZ</span>
+            </a>
+            <a href="catalogo.html?game=hsr" class="nav-segment" title="Catálogo de Personajes & Builds">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+          </div>
+
+          <div class="nav-quick-links">
+            <a href="catalogo.html?game=hsr" class="quick-link" title="Catálogo de Personajes & Guía de Farmeo">
+              <span data-icon="swords"></span>
+              <span>Catálogo</span>
+            </a>
+            <a href="#hsr-cinema" class="quick-link" title="Cine del Expreso: Demos y Cortos">
+              <span data-icon="cinema"></span>
+              <span>Cine</span>
+            </a>
+            <a href="#hsr-news" class="quick-link" title="Noticias del Expreso">
+              <span data-icon="news"></span>
+              <span>Noticias</span>
+            </a>
+            <a href="#hsr-warps" class="quick-link" title="Saltos Activos">
+              <span data-icon="hsr"></span>
+              <span>Saltos</span>
+            </a>
+            <a href="#hsr-codes" class="quick-link" title="Jade Estelar">
+              <span data-icon="codes"></span>
+              <span>Códigos</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Acciones Rápidas -->
+        <div class="header-actions">
+          <a href="catalogo.html?game=hsr" class="nav-btn-builds" title="Ver personajes de Star Rail y sus 3 builds meta">
+            <span data-icon="sword"></span>
+            <span>Builds Meta</span>
+          </a>
+          <button class="nav-btn-sound music-modal-trigger" title="Menú de Música HoYoverse (Jukebox)" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-pill); background: rgba(105, 120, 255, 0.18); color: #a5b4fc; cursor: pointer; border: none; font-size: 0.82rem; font-weight: 700;">
+            <span data-icon="music"></span>
+            <span>Música</span>
+          </button>
+          <button id="sound-toggle-btn" class="nav-btn-sound" title="Efectos de audio celestiales">
+            <span class="sound-icon" data-icon="soundOff"></span>
+          </button>
+          <a href="https://discord.gg/bYSGHFWvhe" target="_blank" rel="noopener" class="nav-btn-discord" title="Servidor oficial de Discord">
+            <span data-icon="discord"></span>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Barra de Navegación de Subpágina -->
+      <nav class="subpage-nav-bar" aria-label="Conexión entre Juegos">
+        <a href="index.html" class="subpage-back-link">
+          <span data-icon="arrowLeft"></span>
+          <span>Volver al Hub Conector Principal</span>
+        </a>
+        <div class="subpage-switcher-links">
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-right: 0.35rem;">Cambiar de juego:</span>
+          <a href="genshin.html" class="switcher-pill">
+            <span data-icon="genshin" data-icon-class="clst-icon-sm"></span>
+            <span>Genshin</span>
+          </a>
+          <a href="hsr.html" class="switcher-pill active" style="background: linear-gradient(135deg, #6978ff, #ba8cff); color: #0b0e1a;">
+            <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+            <span>Star Rail</span>
+          </a>
+          <a href="zzz.html" class="switcher-pill">
+            <span data-icon="zzz" data-icon-class="clst-icon-sm"></span>
+            <span>ZZZ</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Temático de Honkai: Star Rail -->
+      <section class="game-portal-hero" aria-label="Hero de Honkai Star Rail">
+        <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/21/94b346207176750fb5ff12cd0bd8d108_4537896671082030891.webp" alt="Paisaje del Expreso Astral" class="game-portal-hero-bg" loading="eager" decoding="async" />
+        <div class="game-portal-hero-overlay"></div>
+        <div class="game-portal-hero-content">
+          <img src="assets/hsr_logo.svg" alt="Logo Honkai Star Rail" class="game-hero-icon" loading="eager" decoding="async" />
+          <h1 class="hero-title">
+            <span style="background: linear-gradient(135deg, #ffffff 0%, #6978ff 50%, #ba8cff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+              HONKAI: STAR RAIL
+            </span>
+          </h1>
+          <p class="hero-motto">
+            Sube al Expreso Astral, supera la Memoria del Caos 12, optimiza 3 builds meta por personaje y canjea Jades Estelares.
+          </p>
+
+          <div class="hero-stats-bar">
+            <div class="stat-item">
+              <span class="label">Versión Activa:</span>
+              <span class="value" style="color: #6978ff;">Versión 2.6 / 4.6</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">API HoYoPlay:</span>
+              <span class="value" style="color: var(--color-anemo);" id="hsr-api-status">● Conectado (ID: 4ziysqXOQ8)</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Salto de Evento:</span>
+              <span class="value" style="color: #fbe042;">Rappa & Dan Heng IL</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="catalogo.html?game=hsr" class="btn btn-primary" title="Ver catálogo y builds óptimas de Star Rail">
+              <span data-icon="swords"></span>
+              <span>Catálogo & Builds Óptimas</span>
+            </a>
+            <button class="btn btn-secondary" data-open-builds data-game="hsr">
+              <span data-icon="sword"></span>
+              <span>3 Builds Meta por Personaje</span>
+            </button>
+            <a href="#hsr-news" class="btn btn-secondary">
+              <span data-icon="news"></span>
+              <span>Noticias del Expreso</span>
+            </a>
+            <a href="#hsr-warps" class="btn btn-secondary">
+              <span data-icon="hsr"></span>
+              <span>Saltos de Evento Activos</span>
+            </a>
+            <a href="#hsr-codes" class="btn btn-secondary">
+              <span data-icon="codes"></span>
+              <span>Canjear Jade Estelar</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CINE DEL EXPRESO ASTRAL (TRÁILERS, DEMOS Y CORTOS ANIMADOS)
+           ============================================================ -->
+      <section id="hsr-cinema" class="cinema-section" aria-label="Cine de Honkai: Star Rail">
+        <div id="hsr-videos-root"></div>
+      </section>
+
+      <!-- ============================================================
+           NOTICIAS EN TIEMPO REAL DE HSR (API)
+           ============================================================ -->
+      <section id="hsr-news" class="news-hub-container" aria-label="Noticias Oficiales de Star Rail">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span style="color: #ba8cff;">NOTICIAS OFICIALES DEL EXPRESO ASTRAL</span>
+            </h2>
+            <p class="section-desc">
+              Notificaciones oficiales y saltos de evento en tiempo real sincronizados desde la API HoYoPlay de Star Rail.
+            </p>
+          </div>
+          <button id="refresh-hsr-news" class="btn btn-secondary btn-sm">
+            <span data-icon="refresh"></span>
+            <span>Refrescar API</span>
+          </button>
+        </div>
+
+        <!-- Banners Promocionales de HSR -->
+        <div id="hsr-banners-container" class="promo-banners-grid"></div>
+
+        <!-- Filtros de categoría -->
+        <div class="news-filter-bar">
+          <button class="news-filter-btn active" data-filter="all">
+            <span data-icon="globe"></span>
+            <span>Todos los Avisos</span>
+          </button>
+          <button class="news-filter-btn" data-filter="announce">
+            <span data-icon="hsr"></span>
+            <span>Saltos y Versión</span>
+          </button>
+          <button class="news-filter-btn" data-filter="event">
+            <span data-icon="codes"></span>
+            <span>Eventos Especiales</span>
+          </button>
+          <button class="news-filter-btn" data-filter="info">
+            <span data-icon="film"></span>
+            <span>Cinemáticas y Videos</span>
+          </button>
+        </div>
+
+        <!-- Cuadrícula de Noticias -->
+        <div id="hsr-news-grid" class="news-grid">
+          <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: #6978ff;">
+            <div style="animation: spin 1s linear infinite; display: inline-block;">
+              <span data-icon="refresh" data-icon-class="clst-icon-xl clst-icon-hsr"></span>
+            </div>
+            <p style="margin-top: 0.8rem; font-weight: 600;">Conectando con la base de datos de Honkai: Star Rail...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SALTOS DE EVENTO ACTIVOS & CUENTA REGRESIVA
+           ============================================================ -->
+      <section id="hsr-warps" style="margin-top: 3.5rem;" aria-label="Saltos de Evento">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">SALTOS DE EVENTO ACTIVOS</span>
+            </h2>
+            <p class="section-desc">
+              Temporizador en vivo del Salto de Personaje y Salto de Cono de Luz actual.
+            </p>
+          </div>
+        </div>
+
+        <div id="hsr-warps-container" class="banners-grid"></div>
+      </section>
+
+      <!-- ============================================================
+           BÓVEDA DE CÓDIGOS DE JADE ESTELAR
+           ============================================================ -->
+      <section id="hsr-codes" style="margin-top: 3.5rem;" aria-label="Códigos de Jade Estelar">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">CÓDIGOS DE CANJE DE STAR RAIL</span>
+            </h2>
+            <p class="section-desc">
+              Canjea Jades Estelares, Guías del Espíritu y Créditos al instante.
+            </p>
+          </div>
+          <a href="https://hsr.hoyoverse.com/gift" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #ffffff, #6978ff); color: #070913;">
+            <span>Canje Oficial HSR</span>
+            <span data-icon="external"></span>
+          </a>
+        </div>
+
+        <div id="hsr-codes-grid" class="codes-grid"></div>
+      </section>
+
+      <!-- ============================================================
+           GUÍA TÁCTICA DE RASTROS Y CÁLICES
+           ============================================================ -->
+      <section id="hsr-farming" style="margin-top: 3.5rem;" aria-label="Guía de Farmeo de Star Rail">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">GUÍA DE CÁLICES Y RASTROS POR VÍA</span>
+            </h2>
+            <p class="section-desc">
+              Materiales para la ascensión de conos de luz y talentos de combate.
+            </p>
+          </div>
+        </div>
+
+        <div class="genshin-card" style="padding: 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(105, 120, 255, 0.3); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: #6978ff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Vía de la Destrucción</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Hoja despedazadora de estrellas</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Destinado a: Dan Heng IL, Blade, Clara, Jingliu, Misha.</p>
+            </div>
+
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(105, 120, 255, 0.3); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: #ba8cff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Vía de la Nihilidad</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Brote de la nada cósmica</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Destinado a: Acheron, Kafka, Black Swan, Pela, Silver Wolf.</p>
+            </div>
+
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(105, 120, 255, 0.3); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: #fbe042; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Vía de la Armonía</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Notas celestiales del compás</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Destinado a: Robin, Ruan Mei, Sparkle, Bronya, Tingyun.</p>
+            </div>
+
+            <div style="background: rgba(14, 20, 42, 0.7); border: 1px solid rgba(105, 120, 255, 0.3); border-radius: var(--radius-md); padding: 1rem;">
+              <span style="color: var(--color-anemo); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Vía de la Cacería</span>
+              <div style="font-size: 1.05rem; font-weight: 700; margin: 0.25rem 0; color: #ffffff;">Flecha del cazador estelar</div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Destinado a: Feixiao, Dr. Ratio, Seele, Topaz, Dan Heng.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           NOVEDADES Y ACTUALIZACIONES DE STAR RAIL (PARTE INFERIOR)
+           ============================================================ -->
+      <section class="updates-carousel-section" aria-label="Novedades y Actualizaciones de Honkai: Star Rail" style="margin-top: 3.5rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span style="color: #ba8cff;">ACTUALIZACIONES DESTACADAS & NOVEDADES</span>
+            </h2>
+            <p class="section-desc">
+              Sintoniza las novedades de versión del Expreso Astral, Colonipenal y saltos de Amphoreus.
+            </p>
+          </div>
+          <span style="font-size: 0.8rem; color: #ba8cff; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="sparkles" data-icon-class="clst-icon-sm"></span>
+            <span>Versión 2.7 / 3.0 Activa</span>
+          </span>
+        </div>
+
+        <div id="hsr-carousel-root" class="updates-carousel-container">
+          <!-- Slide Inicial Precargado para Cero Pantallas Oscuras -->
+          <article class="carousel-slide active" data-index="0" aria-label="El Cántico del Juicio Astral: Sunday & Fugue">
+            <img src="https://fastcdn.hoyoverse.com/static-resource-v2/2026/10/28/3cfdda4cb3f353338597ae0ab2dd2475_5195173576311565590.png" alt="Star Rail 2.7" class="carousel-slide-bg" loading="eager" decoding="async" />
+            <div class="carousel-slide-overlay"></div>
+            <div class="carousel-content-box">
+              <div class="carousel-meta-row">
+                <span class="carousel-game-badge hsr">
+                  <span data-icon="hsr" data-icon-class="clst-icon-sm"></span>
+                  <span>Honkai: Star Rail</span>
+                </span>
+                <span class="carousel-version-pill">Versión 2.7 / 3.0</span>
+                <span class="carousel-status-pill">
+                  <span class="carousel-live-dot"></span>
+                  <span>Nuevo Arco Astral</span>
+                </span>
+              </div>
+              <h2 class="carousel-title">El Cántico del Juicio Astral: Sunday & Fugue</h2>
+              <p class="carousel-subtitle">El clímax de la sinfonía de Colonipenal abre las puertas al siguiente gran viaje intergaláctico hacia el mundo mítico de Amphoreus.</p>
+              <div class="carousel-features-grid">
+                <div class="carousel-feature-tag"><span data-icon="gem" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>+3200 Jade Estelar + 10 Pases</span></div>
+                <div class="carousel-feature-tag"><span data-icon="star" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Sunday & Fugue</span></div>
+                <div class="carousel-feature-tag"><span data-icon="hsr" data-icon-class="clst-icon-sm clst-icon-gold"></span><span>Vía de la Memoria</span></div>
+              </div>
+              <div class="carousel-actions">
+                <button class="btn btn-primary" data-open-builds data-game="hsr"><span data-icon="sword"></span><span>Ver 3 Builds de Star Rail</span></button>
+                <a href="#hsr-warps" class="btn btn-secondary"><span data-icon="hsr"></span><span>Ver Saltos de Banner</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           TRAZACAMINOS DESTACADOS DEL CLAN
+           ============================================================ -->
+      <section id="hsr-members" style="margin-top: 3.5rem;" aria-label="Miembros de Star Rail">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              <span class="title-gold">TRAZACAMINOS DESTACADOS · EL GREMIO DEL VIAJERO</span>
+            </h2>
+            <p class="section-desc">
+              Miembros con pases de Memoria del Caos 12 completados y builds optimizadas.
+            </p>
+          </div>
+        </div>
+
+        <div id="hsr-members-grid" class="members-grid"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 40px; height: 40px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="title-gold" style="font-size: 1.1rem;">El Gremio del Viajero · División Honkai: Star Rail</h3>
+        <p style="max-width: 600px; font-size: 0.8rem; color: var(--text-secondary);">
+          Honkai: Star Rail es una marca registrada de COGNOSPHERE / HoYoverse. Portal no oficial gestionado por la comunidad.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html" style="color: var(--gold-primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="hub"></span>
+            <span>Hub Central</span>
+          </a>
+          <a href="genshin.html" style="color: #22b8ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="genshin"></span>
+            <span>Portal Genshin</span>
+          </a>
+          <a href="zzz.html" style="color: #e853cd; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span data-icon="zzz"></span>
+            <span>Portal ZZZ</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dock Inferior Móvil -->
+    <nav class="mobile-bottom-dock" aria-label="Navegación Móvil">
+      <div class="dock-container">
+        <a href="index.html" class="dock-item">
+          <span class="icon" data-icon="hub"></span>
+          <span>Hub</span>
+        </a>
+        <a href="genshin.html" class="dock-item">
+          <span class="icon" data-icon="genshin"></span>
+          <span>Genshin</span>
+        </a>
+        <a href="hsr.html" class="dock-item active">
+          <span class="icon" data-icon="hsr"></span>
+          <span>HSR</span>
+        </a>
+        <a href="zzz.html" class="dock-item">
+          <span class="icon" data-icon="zzz"></span>
+          <span>ZZZ</span>
+        </a>
+        <a href="catalogo.html?game=hsr" class="dock-item">
+          <span class="icon" data-icon="swords"></span>
+          <span>Catálogo</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Modal de Build -->
+    <div id="build-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-window">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div id="modal-body-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/icons.js?v=10"></script>
+  <script type="module" src="js/hsr-controller.js?v=10"></script>
+</body>
+</html>

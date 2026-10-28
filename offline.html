@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Modo Fuera de Línea | El Gremio del Viajero</title>
+  <meta name="description" content="Sin conexión a internet. El Gremio del Viajero mantiene tus datos de builds disponibles." />
+  <meta name="theme-color" content="#070913" />
+
+  <!-- PWA Manifest & Favicon -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/jpeg" href="assets/clan_emblem.jpg" />
+
+  <!-- Estilos CSS Modulares -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+
+  <style>
+    .offline-container {
+      min-height: calc(100vh - 180px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .offline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.25rem;
+      background: rgba(239, 68, 68, 0.15);
+      border-radius: 9999px;
+      color: #f87171;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .offline-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, #fca5a5 80%, #ef4444 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .offline-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+    .cached-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 2.5rem;
+    }
+    .cached-card {
+      background: rgba(18, 22, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.5rem 1.25rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .cached-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(236, 209, 157, 0.15);
+      background: rgba(28, 34, 58, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas con partículas cósmicas -->
+  <canvas id="celestial-canvas"></canvas>
+  <div class="celestial-nebula-bg"></div>
+
+  <div class="app-wrapper">
+    <!-- Header Oficial -->
+    <header class="site-header">
+      <div class="header-container">
+        <a class="header-brand" href="index.html" title="Ir al Inicio">
+          <img src="assets/clan_emblem.jpg" alt="Emblema El Gremio del Viajero" class="brand-emblem" />
+          <div class="brand-text">
+            <h1 class="clan-name-text title-gold">El Gremio del Viajero</h1>
+            <p class="brand-sub clan-motto-text">Modo Fuera de Línea</p>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenido Offline -->
+    <main class="offline-container">
+      <div class="offline-badge">
+        <span data-icon="alert"></span>
+        <span>Sin Conexión con Irminsul</span>
+      </div>
+
+      <h1 class="offline-title">Has entrado al Abismo sin Red</h1>
+      <p class="offline-desc">
+        Parece que has perdido la señal de internet. No te preocupes: tus páginas visitadas y el catálogo de personajes permanecen en la memoria local de tu dispositivo.
+      </p>
+
+      <div class="cached-grid">
+        <a href="catalogo.html" class="cached-card">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(236, 209, 157, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center;">
+            <span data-icon="swords" style="transform: scale(1.3);"></span>
+          </div>
+          <div style="font-weight: 700; font-size: 1rem;">Catálogo Guardado</div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary);">Consulta builds y personajes en caché</div>
+        </a>
+
+        <a href="index.html" class="cached-card">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(105, 120, 255, 0.15); color: #8fa0ff; display: flex; align-items: center; justify-content: center;">
+            <span data-icon="hub" style="transform: scale(1.3);"></span>
+          </div>
+          <div style="font-weight: 700; font-size: 1rem;">Hub Principal</div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary);">Accede al cuartel general del clan</div>
+        </a>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <button id="retry-btn" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem;">
+          <span data-icon="refresh"></span>
+          <span>Reintentar Conexión</span>
+        </button>
+      </div>
+      <p id="status-hint" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+        La página se recargará automáticamente tan pronto recuperes la conexión a internet.
+      </p>
+    </main>
+
+    <!-- Footer Oficial -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="assets/clan_emblem.jpg" alt="El Gremio del Viajero" style="width: 44px; height: 44px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" loading="lazy" decoding="async" />
+        <h3 class="clan-name-text title-gold" style="font-size: 1.15rem;">El Gremio del Viajero</h3>
+        <p style="max-width: 600px; font-size: 0.82rem; color: var(--text-secondary);">
+          Portal optimizado con Progressive Web App (PWA) y caché local autónoma.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script type="module" src="js/icons.js?v=10"></script>
+  <script type="module">
+    import { initEffects } from './js/effects.js';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initEffects();
+
+      const retryBtn = document.getElementById('retry-btn');
+      const statusHint = document.getElementById('status-hint');
+
+      if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+          retryBtn.classList.add('loading');
+          if (statusHint) statusHint.textContent = 'Comprobando señal con el servidor...';
+          setTimeout(() => {
+            window.location.reload();
+          }, 600);
+        });
+      }
+
+      // Detector de recuperación de red
+      window.addEventListener('online', () => {
+        if (statusHint) {
+          statusHint.style.color = '#34d399';
+          statusHint.textContent = '¡Conexión restaurada! Recargando...';
+        }
+        setTimeout(() => {
+          window.location.reload();
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

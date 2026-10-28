@@ -1,0 +1,193 @@
+/* ============================================================
+   CELESTIA ORDER - Mobile-First & Phone Responsive Refinements
+   Optimizaciones dedicadas para pantallas de smartphones (< 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Habilitar la barra inferior de navegación táctil (Bottom Dock) */
+  .mobile-bottom-dock {
+    display: block;
+  }
+
+  /* Ocultar la barra de enlaces de texto del header en pantallas pequeñas */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Padding inferior ampliado para evitar que el dock cubra contenido */
+  .main-content {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 7.5rem;
+  }
+
+  /* Header compacto en móvil */
+  .site-header {
+    padding: 0.2rem 0;
+  }
+
+  .header-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .brand-text h1 {
+    font-size: 1rem;
+  }
+
+  .brand-emblem {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-sub {
+    display: none; /* Ocultar lema largo en header móvil */
+  }
+
+  /* Hero Banner optimizado para teléfonos */
+  .clan-hero {
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-content {
+    padding: 2.25rem 1rem 1.75rem;
+  }
+
+  .hero-crest-badge {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-motto {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-stats-bar {
+    padding: 0.65rem 1rem;
+    gap: 0.65rem 1rem;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .stat-item {
+    font-size: 0.78rem;
+  }
+
+  .hero-ctas {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+  }
+
+  /* Buscador de UID en móvil */
+  .uid-search-form {
+    flex-direction: column;
+  }
+
+  .uid-search-form .btn {
+    width: 100%;
+  }
+
+  /* Grids de 1 columna limpia en móvil */
+  .members-grid,
+  .codes-grid,
+  .banners-grid,
+  .farm-domains-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Tarjeta de miembro optimizada para móvil */
+  .member-card {
+    padding: 1.15rem;
+  }
+
+  /* Pestañas de juegos con scroll táctil suave */
+  .game-tabs,
+  .day-selector-bar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .game-tabs::-webkit-scrollbar,
+  .day-selector-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Modal convertido a "Bottom Sheet" nativo de móvil */
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-window {
+    border-radius: 22px 22px 0 0;
+    max-height: 88vh;
+    padding: 2.2rem 1.25rem 2rem;
+    border-bottom: none;
+    transform: translateY(100%);
+  }
+
+  /* Indicador táctil de arrastre superior del modal */
+  .modal-window::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 4px;
+    background: rgba(236, 209, 157, 0.4);
+    border-radius: var(--radius-pill);
+  }
+
+  .modal-backdrop.open .modal-window {
+    transform: translateY(0);
+  }
+
+  /* Toast en móvil elevado sobre el dock */
+  .toast-notice {
+    bottom: 80px;
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Botones táctiles generosos */
+  .btn, .game-tab-btn, .day-btn {
+    min-height: 44px;
+  }
+}
+
+/* Teléfonos muy pequeños (< 380px) */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.45rem;
+  }
+
+  .dock-item {
+    min-width: 48px;
+    font-size: 0.62rem;
+  }
+
+  .dock-item svg {
+    width: 20px;
+    height: 20px;
+  }
+}

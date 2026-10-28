@@ -1,0 +1,416 @@
+/**
+ * CELESTIA ORDER - ESTILOS DE VIDEOS Y CINE HOYOVERSE (THEATER CINEMA)
+ * Estética de lujo, ambient glow, reproductor 16:9 y micro-animaciones
+ */
+
+.clst-videos-wrapper {
+  max-width: 1380px;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.clst-videos-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.clst-videos-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffd700;
+  width: fit-content;
+}
+
+.clst-videos-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  margin: 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 70%, #ffd700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.clst-videos-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 780px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.clst-videos-subtitle strong {
+  color: #f1f5f9;
+}
+
+.clst-video-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.video-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   CUADRÍCULA DE VIDEOS
+   ========================================================================== */
+.clst-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.clst-video-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.clst-video-card:hover {
+  transform: translateY(-7px) scale(1.015);
+  border-color: var(--v-accent);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.75), 0 0 24px color-mix(in srgb, var(--v-accent) 25%, transparent);
+}
+
+.video-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #020617;
+  overflow: hidden;
+}
+
+.video-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.clst-video-card:hover .video-thumb-img {
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+
+.video-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+  pointer-events: none;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 2px solid #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-play-btn .play-icon {
+  width: 22px;
+  height: 22px;
+  margin-left: 3px;
+}
+
+.clst-video-card:hover .video-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #ffd700;
+  color: #0f172a;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+}
+
+.video-duration-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 0.2rem 0.55rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.video-game-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+}
+
+.video-game-badge.genshin {
+  background: rgba(234, 179, 8, 0.25);
+  color: #ffd700;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.video-game-badge.hsr {
+  background: rgba(105, 120, 255, 0.25);
+  color: #6978ff;
+  border: 1px solid rgba(105, 120, 255, 0.4);
+}
+
+.video-game-badge.zzz {
+  background: rgba(232, 83, 205, 0.25);
+  color: #e853cd;
+  border: 1px solid rgba(232, 83, 205, 0.4);
+}
+
+/* Info de la tarjeta */
+.video-card-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.video-category-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot-separator {
+  color: #64748b;
+}
+
+.video-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.35;
+  margin: 0 0 0.4rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   MODAL DE CINE (THEATER OVERLAY)
+   ========================================================================== */
+.clst-cinema-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(3, 7, 18, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: cinemaFadeIn 0.25s ease;
+}
+
+@keyframes cinemaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.clst-cinema-window {
+  width: 100%;
+  max-width: 1060px;
+  background: #090d1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.cinema-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cinema-header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cinema-live-dot, .cinema-live-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+  animation: cinemaPulse 2s infinite;
+}
+
+@keyframes cinemaPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.cinema-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.cinema-close-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cinema-close-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.cinema-player-box {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+.cinema-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.cinema-active-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cinema-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 1rem;
+}
+
+.cinema-tip {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cinema-tip strong {
+  color: #ffd700;
+}
+
+.cinema-yt-btn {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.cinema-yt-btn:hover {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff4444;
+  border-color: rgba(255, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .clst-videos-wrapper {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .clst-videos-title {
+    font-size: 1.7rem;
+  }
+  .cinema-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
